@@ -1,0 +1,21 @@
+{
+  "name": "repo-publishing",
+  "displayName": "Repo Publishing",
+  "version": "0.1.0",
+  "icon": "./.claude-plugin/icon.png",
+  "description": "Publish a private repository safely as open source and release new versions as draft GitHub releases.",
+  "author": {
+    "name": "Matteo Brunetti"
+  },
+  "license": "MIT",
+  "keywords": [
+    "open-source",
+    "release",
+    "github",
+    "git",
+    "changelog",
+    "security"
+  ],
+  "homepage": "https://github.com/TheMattHub/claude-skills/tree/main/plugins/repo-publishing",
+  "repository": "https://github.com/TheMattHub/claude-skills"
+}

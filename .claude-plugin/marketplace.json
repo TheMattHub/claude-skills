@@ -5,56 +5,57 @@
     "name": "Matteo Brunetti"
   },
   "renames": {
-    "writing-toolkit": "thematthub-writing-toolkit",
-    "repo-publishing": "thematthub-repo-publishing",
-    "web-pages": "thematthub-web-pages",
-    "docs-export": "thematthub-docs-export",
+    "thematthub-writing-toolkit": "writing-toolkit",
+    "thematthub-repo-publishing": "repo-publishing",
+    "thematthub-web-pages": "web-pages",
+    "thematthub-docs-export": "docs-export",
+    "thematthub-plant-data": "plant-data",
+    "thematthub-llm-integration": "llm-integration",
+    "thematthub-decks": "decks",
+    "thematthub-naga": "naga",
+    "thematthub-agent-waves": null,
     "agent-waves": null,
-    "plant-data": "thematthub-plant-data",
-    "llm-integration": "thematthub-llm-integration",
-    "decks": "thematthub-decks",
-    "system1": null,
-    "thematthub-agent-waves": null
+    "system1": null
   },
   "plugins": [
     {
-      "name": "thematthub-writing-toolkit",
-      "source": "./plugins/thematthub-writing-toolkit",
+      "name": "writing-toolkit",
+      "source": "./plugins/writing-toolkit",
       "description": "Write texts a reader can follow without the author: handbooks, documentation sites, research papers, Italian texts, competitor analyses.",
       "category": "productivity"
     },
     {
-      "name": "thematthub-repo-publishing",
-      "source": "./plugins/thematthub-repo-publishing",
+      "name": "repo-publishing",
+      "source": "./plugins/repo-publishing",
       "description": "Turn a private repository into a safe public release, and cut versioned releases with draft notes.",
       "category": "development"
     },
     {
-      "name": "thematthub-web-pages",
-      "source": "./plugins/thematthub-web-pages",
+      "name": "web-pages",
+      "source": "./plugins/web-pages",
       "description": "Build shareable HTML pages (dashboards, viewers, monitors, reports) and choose interface colours that are validated instead of eyeballed.",
       "category": "development"
     },
     {
-      "name": "thematthub-docs-export",
-      "source": "./plugins/thematthub-docs-export",
+      "name": "docs-export",
+      "source": "./plugins/docs-export",
       "description": "Export a project's markdown documentation to Word and PDF, with your own templates and rendered Mermaid diagrams. The script is written for Windows.",
       "category": "productivity"
     },
     {
-      "name": "thematthub-plant-data",
-      "source": "./plugins/thematthub-plant-data",
+      "name": "plant-data",
+      "source": "./plugins/plant-data",
       "description": "Connect apps and simulations to live plant data (OPC UA, MQTT, MES, SQL) without leaking credentials or sending unsafe commands.",
       "category": "development"
     },
     {
-      "name": "thematthub-llm-integration",
-      "source": "./plugins/thematthub-llm-integration",
+      "name": "llm-integration",
+      "source": "./plugins/llm-integration",
       "description": "Add language-model calls (Claude, OpenAI, Ollama, LM Studio) to an app, with reliable JSON output and guidance on choosing a local model.",
       "category": "development"
     },
     {
-      "name": "thematthub-decks",
+      "name": "decks",
       "displayName": "Decks",
       "source": {
         "source": "github",
@@ -63,11 +64,11 @@
       "description": "Make presentations: brief and structure by kind, design in Claude Slides, finish and edit natively in PowerPoint, build on company templates. The PowerPoint steps need Windows with desktop PowerPoint.",
       "category": "productivity",
       "metadata": {
-        "icon": "./icons/thematthub-decks.png"
+        "icon": "./icons/decks.png"
       }
     },
     {
-      "name": "thematthub-naga",
+      "name": "naga",
       "displayName": "Naga simulation study",
       "source": {
         "source": "git-subdir",
@@ -105,7 +106,7 @@
         "mcp"
       ],
       "metadata": {
-        "icon": "./icons/thematthub-naga.png"
+        "icon": "./icons/naga.png"
       }
     }
   ]

@@ -1,2 +1,2 @@
-# LF everywhere: the bash scripts in plugins break on CRLF, and PowerShell reads LF fine.
+# LF everywhere, so scripts behave the same on every machine.
 * text=auto eol=lf

@@ -2,18 +2,18 @@
 
 ## Current status
 
-Version 0.1.0 of every plugin kept in this repository (`thematthub-docs-export`: 0.2.0).
+Version 0.1.0 of every plugin kept in this repository (`docs-export`: 0.2.0).
 
 | Plugin | Skills |
 | --- | --- |
-| thematthub-writing-toolkit | writing-self-contained-text, writing-course-handbooks, writing-docs-sites, writing-research-papers, writing-italian, analysing-competitors |
-| thematthub-repo-publishing | open-source-repo-publication, releasing-a-repo |
-| thematthub-web-pages | building-shareable-web-pages, choosing-ui-colours |
-| thematthub-docs-export | exporting-docs |
-| thematthub-plant-data | connecting-to-plant-data |
-| thematthub-llm-integration | integrating-llms |
+| writing-toolkit | writing-self-contained-text, writing-course-handbooks, writing-docs-sites, writing-research-papers, writing-italian, analysing-competitors |
+| repo-publishing | open-source-repo-publication, releasing-a-repo |
+| web-pages | building-shareable-web-pages, choosing-ui-colours |
+| docs-export | exporting-docs |
+| plant-data | connecting-to-plant-data |
+| llm-integration | integrating-llms |
 
-`thematthub-decks` and `thematthub-naga` are listed in the marketplace from their own repositories
+`decks` and `naga` are listed in the marketplace from their own repositories
 (`TheMattHub/decks`; the `simulation-study` skill folder of `TheMattHub/naga`, with the engine's MCP
 server declared in the marketplace entry).
 
@@ -52,3 +52,6 @@ IDs are stable; prefix `MK`.
 - 2026-11-19: the agent-waves plugin moved out of this repository to a private one; both of its
   published names map to `null` in `renames`. Icons for the two listings that live in other
   repositories are kept in `icons/` and shown in the README table.
+- 2026-11-19: decided not to submit to Anthropic's directory (it accepts scripts only from Verified
+  organisations, and three plugins ship scripts). The `thematthub-` prefix existed only for that
+  directory, so the plugins are back to their plain names; `renames` maps the prefixed names to them.
