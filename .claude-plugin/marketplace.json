@@ -1,0 +1,69 @@
+{
+  "name": "thematthub",
+  "description": "Skills for Claude Code from real project work: writing, document export, publishing repositories, shareable web pages, agent coordination, plant data and LLM integration.",
+  "owner": {
+    "name": "Matteo Brunetti"
+  },
+  "plugins": [
+    {
+      "name": "writing-toolkit",
+      "source": "./plugins/writing-toolkit",
+      "description": "Write texts a reader can follow without the author: handbooks, documentation sites, research papers, Italian texts, competitor analyses.",
+      "category": "productivity"
+    },
+    {
+      "name": "repo-publishing",
+      "source": "./plugins/repo-publishing",
+      "description": "Turn a private repository into a safe public release, and cut versioned releases with draft notes.",
+      "category": "development"
+    },
+    {
+      "name": "web-pages",
+      "source": "./plugins/web-pages",
+      "description": "Build shareable HTML pages (dashboards, viewers, monitors, reports) and choose interface colours that are validated instead of eyeballed.",
+      "category": "development"
+    },
+    {
+      "name": "docs-export",
+      "source": "./plugins/docs-export",
+      "description": "Export a project's markdown documentation to Word and PDF, with your own templates and rendered Mermaid diagrams.",
+      "category": "productivity"
+    },
+    {
+      "name": "agent-waves",
+      "source": "./plugins/agent-waves",
+      "description": "Advanced: coordinate several subagents on one repository in waves, with worktrees, briefs, independent checks and unattended runs.",
+      "category": "development"
+    },
+    {
+      "name": "plant-data",
+      "source": "./plugins/plant-data",
+      "description": "Connect apps, simulations and digital twins to plant systems (OPC UA, MQTT, MES, historians) safely.",
+      "category": "development"
+    },
+    {
+      "name": "llm-integration",
+      "source": "./plugins/llm-integration",
+      "description": "Add language-model calls to an app: provider-agnostic client, validated JSON output, local models, a fake for tests.",
+      "category": "development"
+    },
+    {
+      "name": "decks",
+      "source": {
+        "source": "github",
+        "repo": "TheMattHub/decks"
+      },
+      "description": "Make presentations: brief and structure by kind, design in Claude Slides, finish and edit natively in PowerPoint, build on company templates.",
+      "category": "productivity"
+    },
+    {
+      "name": "system1",
+      "source": {
+        "source": "github",
+        "repo": "TheMattHub/Sys1-AI-Gateway"
+      },
+      "description": "Guided setup, diagnosis and provider development for the System-1 gateway: fast decisions for Claude Code from local models.",
+      "category": "development"
+    }
+  ]
+}

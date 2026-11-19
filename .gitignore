@@ -1,0 +1,9 @@
+# Optional local list of extra terms for tools/check_repo.py to reject.
+.private-terms.txt
+
+# Eval run output
+**/evals/results/
+
+__pycache__/
+*.pyc
+.claude/worktrees/

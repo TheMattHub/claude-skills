@@ -1,0 +1,17 @@
+{
+  "name": "writing-toolkit",
+  "version": "0.1.0",
+  "description": "Six writing skills: self-contained text, course handbooks, docs sites, research papers, Italian prose and competitor analysis.",
+  "author": {
+    "name": "Matteo Brunetti"
+  },
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "documentation",
+    "handbook",
+    "research-paper",
+    "italian",
+    "competitor-analysis"
+  ]
+}
