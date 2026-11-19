@@ -6,45 +6,45 @@
   },
   "plugins": [
     {
-      "name": "writing-toolkit",
-      "source": "./plugins/writing-toolkit",
+      "name": "thematthub-writing-toolkit",
+      "source": "./plugins/thematthub-writing-toolkit",
       "description": "Write texts a reader can follow without the author: handbooks, documentation sites, research papers, Italian texts, competitor analyses.",
       "category": "productivity"
     },
     {
-      "name": "repo-publishing",
-      "source": "./plugins/repo-publishing",
+      "name": "thematthub-repo-publishing",
+      "source": "./plugins/thematthub-repo-publishing",
       "description": "Turn a private repository into a safe public release, and cut versioned releases with draft notes.",
       "category": "development"
     },
     {
-      "name": "web-pages",
-      "source": "./plugins/web-pages",
+      "name": "thematthub-web-pages",
+      "source": "./plugins/thematthub-web-pages",
       "description": "Build shareable HTML pages (dashboards, viewers, monitors, reports) and choose interface colours that are validated instead of eyeballed.",
       "category": "development"
     },
     {
-      "name": "docs-export",
-      "source": "./plugins/docs-export",
-      "description": "Export a project's markdown documentation to Word and PDF, with your own templates and rendered Mermaid diagrams.",
+      "name": "thematthub-docs-export",
+      "source": "./plugins/thematthub-docs-export",
+      "description": "Export a project's markdown documentation to Word and PDF, with your own templates and rendered Mermaid diagrams. The script is written for Windows.",
       "category": "productivity"
     },
     {
-      "name": "agent-waves",
-      "source": "./plugins/agent-waves",
-      "description": "Advanced: coordinate several subagents on one repository in waves, with worktrees, briefs, independent checks and unattended runs.",
+      "name": "thematthub-agent-waves",
+      "source": "./plugins/thematthub-agent-waves",
+      "description": "Advanced: coordinate several Claude Code subagents on one repository, with parallel branches, merges and independent review, including long runs while you are away.",
       "category": "development"
     },
     {
-      "name": "plant-data",
-      "source": "./plugins/plant-data",
-      "description": "Connect apps, simulations and digital twins to plant systems (OPC UA, MQTT, MES, historians) safely.",
+      "name": "thematthub-plant-data",
+      "source": "./plugins/thematthub-plant-data",
+      "description": "Connect apps and simulations to live plant data (OPC UA, MQTT, MES, SQL) without leaking credentials or sending unsafe commands.",
       "category": "development"
     },
     {
-      "name": "llm-integration",
-      "source": "./plugins/llm-integration",
-      "description": "Add language-model calls to an app: provider-agnostic client, validated JSON output, local models, a fake for tests.",
+      "name": "thematthub-llm-integration",
+      "source": "./plugins/thematthub-llm-integration",
+      "description": "Add language-model calls (Claude, OpenAI, Ollama, LM Studio) to an app, with reliable JSON output and guidance on choosing a local model.",
       "category": "development"
     },
     {

@@ -1,9 +1,0 @@
-{
-  "name": "web-pages",
-  "version": "0.1.0",
-  "icon": "./.claude-plugin/icon.png",
-  "description": "Skills for building safe, readable HTML pages (dashboards, viewers, reports) and choosing their colours.",
-  "author": { "name": "Matteo Brunetti" },
-  "license": "MIT",
-  "keywords": ["html","web","dashboard","csp","accessibility","colour","dark-mode"]
-}

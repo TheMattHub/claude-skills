@@ -26,7 +26,7 @@ Do this inside Claude Code.
 2. Install a plugin:
 
    ```text
-   /plugin install writing-toolkit@thematthub
+   /plugin install thematthub-writing-toolkit@thematthub
    ```
 
    This does not install at once. It opens the plugin's details page. The "Will install" section lists the skills, hooks and servers it adds. Read it.
@@ -34,17 +34,17 @@ Do this inside Claude Code.
 4. Read the install summary. `Plugin is now active.` means you can use it now. `Run /reload-plugins to apply.` means Claude Code reloads for you, or you run that command yourself.
 5. Confirm: type `/` and look for the plugin's skills in the list, or in a shell run `claude plugin list`.
 
-The same steps work from a shell: `claude plugin marketplace add TheMattHub/claude-skills`, then `claude plugin install writing-toolkit@thematthub`.
+The same steps work from a shell: `claude plugin marketplace add TheMattHub/claude-skills`, then `claude plugin install thematthub-writing-toolkit@thematthub`.
 
 ## Enable, disable, update, remove
 
 Run `/plugin` and open the Installed tab. Select a plugin to open its menu: enable or disable, update now, or uninstall. Press Space to toggle the selected plugin. The same actions exist in a shell:
 
 ```text
-claude plugin disable writing-toolkit@thematthub
-claude plugin enable writing-toolkit@thematthub
-claude plugin update writing-toolkit@thematthub
-claude plugin uninstall writing-toolkit@thematthub
+claude plugin disable thematthub-writing-toolkit@thematthub
+claude plugin enable thematthub-writing-toolkit@thematthub
+claude plugin update thematthub-writing-toolkit@thematthub
+claude plugin uninstall thematthub-writing-toolkit@thematthub
 ```
 
 Marketplaces from third parties, including this one, do not update automatically by default. To get newer versions, update the plugin as shown above, or open the Marketplaces tab, select `thematthub`, and choose "Update marketplace". The new version loads in your next session, or after `/reload-plugins`. You can turn automatic updates on in the same Marketplaces tab. Removing the marketplace (`claude plugin marketplace remove thematthub`) uninstalls every plugin you installed from it.
@@ -56,7 +56,7 @@ Every installed skill's description is sent with every request, whether or not y
 Install the two or three plugins you need, then review after a few weeks:
 
 - `/skill-doctor` shows what each skill costs, how often it was used, and which were never used.
-- `claude plugin details writing-toolkit` (in a shell) shows the always-on token cost (tokens are the units in which Claude counts text) of one plugin and which skill contributes most.
+- `claude plugin details thematthub-writing-toolkit` (in a shell) shows the always-on token cost (tokens are the units in which Claude counts text) of one plugin and which skill contributes most.
 - The Installed tab in `/plugin` groups plugins you have not used recently under "Not used recently".
 
 Disable or uninstall what you do not use.

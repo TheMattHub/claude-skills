@@ -1,0 +1,20 @@
+{
+  "name": "thematthub-docs-export",
+  "displayName": "Docs Export",
+  "version": "0.2.0",
+  "icon": "./.claude-plugin/icon.png",
+  "description": "Export a project's markdown documentation to Word and PDF, with your own templates and rendered Mermaid diagrams. The script is written for Windows.",
+  "author": {
+    "name": "Matteo Brunetti"
+  },
+  "license": "MIT",
+  "keywords": [
+    "documentation",
+    "pandoc",
+    "word",
+    "pdf",
+    "mermaid"
+  ],
+  "homepage": "https://github.com/TheMattHub/claude-skills/tree/main/plugins/thematthub-docs-export",
+  "repository": "https://github.com/TheMattHub/claude-skills"
+}

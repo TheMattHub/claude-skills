@@ -2,17 +2,17 @@
 
 ## Current status
 
-Version 0.1.0 of every plugin kept in this repository (`docs-export`: 0.2.0).
+Version 0.1.0 of every plugin kept in this repository (`thematthub-docs-export`: 0.2.0).
 
 | Plugin | Skills |
 | --- | --- |
-| writing-toolkit | writing-self-contained-text, writing-course-handbooks, writing-docs-sites, writing-research-papers, writing-italian, analysing-competitors |
-| repo-publishing | open-source-repo-publication, releasing-a-repo |
-| web-pages | building-shareable-web-pages, choosing-ui-colours |
-| docs-export | exporting-docs |
-| agent-waves | coordinating-agent-waves, subagent-driven-development |
-| plant-data | connecting-to-plant-data |
-| llm-integration | integrating-llms |
+| thematthub-writing-toolkit | writing-self-contained-text, writing-course-handbooks, writing-docs-sites, writing-research-papers, writing-italian, analysing-competitors |
+| thematthub-repo-publishing | open-source-repo-publication, releasing-a-repo |
+| thematthub-web-pages | building-shareable-web-pages, choosing-ui-colours |
+| thematthub-docs-export | exporting-docs |
+| thematthub-agent-waves | coordinating-agent-waves, subagent-driven-development |
+| thematthub-plant-data | connecting-to-plant-data |
+| thematthub-llm-integration | integrating-llms |
 
 `decks` and `system1` are listed in the marketplace from their own repositories.
 
@@ -33,12 +33,12 @@ IDs are stable; prefix `MK`.
 | --- | --- | --- | --- |
 | MK-1 | 2026-11-19, evals | `analysing-competitors` and `open-source-repo-publication` did not load on question-style requests ("what should I check before...") in 0 of 3 runs | fixed: descriptions now name that kind of request; 3 of 3 |
 | MK-2 | 2026-11-19, review | `subagent-driven-development` told the reader to run its scripts "from this skill's directory", which fails for a plugin install | fixed: scripts are called by absolute path from the repository working tree |
-| MK-3 | 2026-11-19, review | `NOTICE.md` in agent-waves listed only part of the files derived from the superpowers plugin | fixed |
+| MK-3 | 2026-11-19, review | `NOTICE.md` in thematthub-agent-waves listed only part of the files derived from the superpowers plugin | fixed |
 | MK-4 | 2026-11-19, review | Two credits to a third-party repository had been removed during packaging | fixed: credits restored |
 
 ## Log
 
 - 2026-11-19: first build. Skills packaged from working copies, personal and project-specific
   content removed, trigger evals written and run (22 cases), whole-repository review applied.
-- 2026-11-19: `docs-export` added with configurable templates (no company template shipped);
+- 2026-11-19: `thematthub-docs-export` added with configurable templates (no company template shipped);
   `emulate3d` moved out of this repository; repository named `claude-skills`.

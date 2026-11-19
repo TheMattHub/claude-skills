@@ -1,9 +1,0 @@
-{
-  "name": "plant-data",
-  "version": "0.1.0",
-  "icon": "./.claude-plugin/icon.png",
-  "description": "Skill for connecting apps and simulations to live plant data (OPC UA, MQTT, MES, SQL) without leaking credentials or sending unsafe commands.",
-  "author": { "name": "Matteo Brunetti" },
-  "license": "MIT",
-  "keywords": ["opc-ua","mqtt","scada","digital-twin","industrial","mes","security"]
-}
