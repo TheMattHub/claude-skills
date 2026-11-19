@@ -36,16 +36,16 @@ The plugin folders' own READMEs use a one-step form that adds the marketplace an
 
 ## Plugins
 
-| | Plugin | What it helps with | Who should install it |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Plugin | What it helps with | Who should install it |
 | --- | --- | --- | --- |
-| <img src="plugins/writing-toolkit/.claude-plugin/icon.png" width="40" alt=""> | `writing-toolkit` | Writing texts a reader can follow without you: handbooks, documentation sites, research papers, Italian texts, competitor analyses | Everyone who writes reports, guides or papers |
-| <img src="plugins/repo-publishing/.claude-plugin/icon.png" width="40" alt=""> | `repo-publishing` | Turning a private repository into a safe public release, and cutting versioned releases with draft notes | Anyone who publishes code |
-| <img src="plugins/web-pages/.claude-plugin/icon.png" width="40" alt=""> | `web-pages` | Building shareable HTML pages (dashboards, viewers, monitors, reports) and choosing interface colours that are validated instead of eyeballed | Anyone who builds dashboards or viewers |
-| <img src="plugins/docs-export/.claude-plugin/icon.png" width="40" alt=""> | `docs-export` | Exporting a project's markdown documentation to Word and PDF, with your own templates and rendered Mermaid diagrams | Anyone who sends documentation to clients or colleagues. Written for Windows |
-| <img src="plugins/plant-data/.claude-plugin/icon.png" width="40" alt=""> | `plant-data` | Connecting apps, simulations and digital twins to plant systems (OPC UA, MQTT, MES, historians) safely | Simulation and automation engineers |
-| <img src="plugins/llm-integration/.claude-plugin/icon.png" width="40" alt=""> | `llm-integration` | Adding language-model calls to an app: provider-agnostic client, validated JSON output, local models, a fake for tests | Developers who build apps that call a model |
-| <img src="icons/decks.png" width="40" alt=""> | `decks` | Making presentations: brief and structure, design in Claude Slides, finishing in PowerPoint, company templates | Anyone who builds slide decks. The PowerPoint steps need Windows with desktop PowerPoint |
-| <img src="icons/naga.png" width="40" alt=""> | `naga` | Running a simulation study for a decision (how many machines, staff or docks; will a change cope with demand) with the Naga engine | Anyone with a capacity or what-if question. Needs Python and the engine: `pip install "nagasim[mcp]"` |
+| <img src="plugins/writing-toolkit/.claude-plugin/icon.png" width="72" alt=""> | `writing-toolkit` | Writing texts a reader can follow without you: handbooks, documentation sites, research papers, Italian texts, competitor analyses | Everyone who writes reports, guides or papers |
+| <img src="plugins/repo-publishing/.claude-plugin/icon.png" width="72" alt=""> | `repo-publishing` | Turning a private repository into a safe public release, and cutting versioned releases with draft notes | Anyone who publishes code |
+| <img src="plugins/web-pages/.claude-plugin/icon.png" width="72" alt=""> | `web-pages` | Building shareable HTML pages (dashboards, viewers, monitors, reports) and choosing interface colours that are validated instead of eyeballed | Anyone who builds dashboards or viewers |
+| <img src="plugins/docs-export/.claude-plugin/icon.png" width="72" alt=""> | `docs-export` | Exporting a project's markdown documentation to Word and PDF, with your own templates and rendered Mermaid diagrams | Anyone who sends documentation to clients or colleagues. Written for Windows |
+| <img src="plugins/plant-data/.claude-plugin/icon.png" width="72" alt=""> | `plant-data` | Connecting apps, simulations and digital twins to plant systems (OPC UA, MQTT, MES, historians) safely | Simulation and automation engineers |
+| <img src="plugins/llm-integration/.claude-plugin/icon.png" width="72" alt=""> | `llm-integration` | Adding language-model calls to an app: provider-agnostic client, validated JSON output, local models, a fake for tests | Developers who build apps that call a model |
+| <img src="icons/decks.png" width="72" alt=""> | `decks` | Making presentations: brief and structure, design in Claude Slides, finishing in PowerPoint, company templates | Anyone who builds slide decks. The PowerPoint steps need Windows with desktop PowerPoint |
+| <img src="icons/naga.png" width="72" alt=""> | `naga` | Running a simulation study for a decision (how many machines, staff or docks; will a change cope with demand) with the Naga engine | Anyone with a capacity or what-if question. Needs Python and the engine: `pip install "nagasim[mcp]"` |
 
 The last two live in their own repositories and are only listed here, so installing them fetches from those repositories:
 
