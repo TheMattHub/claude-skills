@@ -10,8 +10,11 @@
    Anything older than the longest legitimate command is suspect; follow ParentProcessId to the
    shell that launched it (a heredoc script shows its whole body in the parent's command line).
 5. `py-spy dump --pid N` (add `--locals`) on the suspect: the stack names the blocking line.
-6. Kill the process TREE (`taskkill /PID <root> /T /F`), confirm it is gone, message the agent:
-   what hung, that it was killed, and to rerun under a hard timeout.
+6. Only for a process step 4 showed to be that agent's child: show the user the process and its
+   parent and ask before stopping it; in an unattended run, stop it only if the run log records
+   `stop leftovers yes`, otherwise log it and move to other work. Then kill the process TREE
+   (`taskkill /PID <root> /T /F`), confirm it is gone, and message the agent: what hung, that it
+   was killed, and to rerun under a hard timeout.
 
 ## Failure modes seen in a long run (symptom -> cause -> prevention)
 

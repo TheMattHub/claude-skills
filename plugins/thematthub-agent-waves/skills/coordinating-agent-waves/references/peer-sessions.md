@@ -77,7 +77,8 @@ after a limit has hit, at most two agents across all sessions, and large ones al
   the peer's branch can be fixed only on the peer's branch.
 - Review a producer's branch read-only and send the findings. When the producer reports them
   fixed, re-run the reviewer's own repro scripts yourself; a summary is not proof.
-- `CronList` before `CronCreate`. A trigger left over from before a compaction kept firing after
+- `CronList` before `CronCreate`, and `CronCreate` only after the user agreed to a scheduled
+  wake-up (SKILL.md, "Going unattended", step 2). A trigger left over from before a compaction kept firing after
   the known one was deleted.
 - When a session leaves the work for good, it:
   - writes its final state on the board;

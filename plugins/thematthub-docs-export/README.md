@@ -19,10 +19,10 @@ The script is written for Windows; on macOS or Linux PowerShell 7 runs it, but s
 
 ## What it reads, writes and runs
 
-I checked this against `skills/exporting-docs/scripts/export-docs.ps1`.
+Checked against `skills/exporting-docs/scripts/export-docs.ps1`.
 
 - **Reads:** the project's markdown files (by default `README.md`, `HANDBOOK.md`, `CONCEPTUAL_MODEL.md`, `RESOURCES.md`, `EXPERIMENTS.md` and `DEVLOG.md`, or the files you name), images those files link to, the optional revisions file you name, `~/.claude/docs-export.json`, and the template files named there. It also reads the machine and user `PATH` to find tools, checks whether Edge or Chrome is installed, and asks `git` for your configured user name.
-- **Runs:** `pandoc`, `pdflatex` or `xelatex` (PDF only), and the Mermaid CLI `mmdc` (only when a document has a Mermaid block), which starts your installed Edge or Chrome in the background to draw the diagram.
+- **Runs:** `pandoc` with the two Lua filters shipped in `skills/exporting-docs/scripts/` (`html-anchors.lua`, `table-widths.lua`), `pdflatex` or `xelatex` (PDF only), and the Mermaid CLI `mmdc` (only when a document has a Mermaid block), which starts your installed Edge or Chrome in the background to draw the diagram.
 - **Writes:** an `export` folder in the project holding the `.docx` and `.pdf` files, and a `.build` folder inside it with intermediate files (combined markdown, diagram images, copied images, the unpacked LaTeX template, LaTeX logs). The `.build` folder is deleted and recreated on each run. Nothing is written outside the project except what the tools themselves do.
 - **Does not:** download or install anything, or send data over the network. A missing tool stops the script with the install command for you to run yourself.
 

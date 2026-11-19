@@ -4,6 +4,17 @@
   "owner": {
     "name": "Matteo Brunetti"
   },
+  "renames": {
+    "writing-toolkit": "thematthub-writing-toolkit",
+    "repo-publishing": "thematthub-repo-publishing",
+    "web-pages": "thematthub-web-pages",
+    "docs-export": "thematthub-docs-export",
+    "agent-waves": "thematthub-agent-waves",
+    "plant-data": "thematthub-plant-data",
+    "llm-integration": "thematthub-llm-integration",
+    "decks": "thematthub-decks",
+    "system1": null
+  },
   "plugins": [
     {
       "name": "thematthub-writing-toolkit",
@@ -48,13 +59,53 @@
       "category": "development"
     },
     {
-      "name": "decks",
+      "name": "thematthub-decks",
+      "displayName": "Decks",
       "source": {
         "source": "github",
         "repo": "TheMattHub/decks"
       },
-      "description": "Make presentations: brief and structure by kind, design in Claude Slides, finish and edit natively in PowerPoint, build on company templates.",
+      "description": "Make presentations: brief and structure by kind, design in Claude Slides, finish and edit natively in PowerPoint, build on company templates. The PowerPoint steps need Windows with desktop PowerPoint.",
       "category": "productivity"
+    },
+    {
+      "name": "thematthub-naga",
+      "displayName": "Naga simulation study",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/TheMattHub/naga.git",
+        "path": "nagasim/skills"
+      },
+      "description": "Run a simulation study for a capacity or what-if decision (how many machines, staff or docks; will a change cope with demand) with the Naga engine. Needs the engine installed: pip install \"nagasim[mcp]\".",
+      "category": "productivity",
+      "skills": [
+        "./simulation-study"
+      ],
+      "mcpServers": {
+        "naga": {
+          "command": "naga",
+          "args": [
+            "mcp",
+            "--tools",
+            "study",
+            "--root",
+            "${CLAUDE_PROJECT_DIR}"
+          ]
+        }
+      },
+      "author": {
+        "name": "Matteo Brunetti"
+      },
+      "license": "Apache-2.0",
+      "homepage": "https://github.com/TheMattHub/naga",
+      "repository": "https://github.com/TheMattHub/naga",
+      "keywords": [
+        "simulation",
+        "discrete-event",
+        "capacity planning",
+        "what-if",
+        "mcp"
+      ]
     }
   ]
 }

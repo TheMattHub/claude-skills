@@ -9,8 +9,13 @@
 #   - -Stop needs -RepoRoot <path> (repeat it or pass several paths to add worktrees outside it).
 #     Without -RepoRoot, -Stop stops nothing and says so.
 #   - -Stop ends only leftovers whose command line mentions a -RepoRoot path (case-insensitive,
-#     "/" and "\" treated alike). Every other leftover is listed as
-#     "not stopped: no link to this repository".
+#     "/" and "\" treated alike, whole folder names only: C:\work\app does not match
+#     C:\work\app-other). Every other leftover is listed as "not stopped: no link to this
+#     repository". A worker whose command line has no path (some pytest workers) is never linked:
+#     stop those by hand.
+#   - A -RepoRoot must be an existing git repository or worktree folder (it holds .git), and
+#     neither a drive root nor the user's home folder: a wider path would link unrelated processes.
+# Pass -RepoRoot in the dry run too, so the list says which leftovers are linked.
 # The caller (an agent) must show the dry-run list to the user and stop only after the user says yes.
 # No prompts here: the script runs under an agent.
 param(
@@ -23,7 +28,18 @@ param(
 # Compare paths lower-case with backslashes and no trailing slash.
 function ConvertTo-PathKey([string]$s) { ($s -replace '/', '\').TrimEnd('\').ToLowerInvariant() }
 $roots = @()
-foreach ($r in $RepoRoot) { if ($r) { $roots += ConvertTo-PathKey $r } }
+foreach ($r in $RepoRoot) {
+    if (-not $r) { continue }
+    if (-not (Test-Path -LiteralPath $r -PathType Container)) { throw "-RepoRoot '$r' is not an existing folder." }
+    $full = (Resolve-Path -LiteralPath $r).ProviderPath
+    $key = ConvertTo-PathKey $full
+    if (-not (Test-Path -LiteralPath (Join-Path $full '.git'))) { throw "-RepoRoot '$full' is not a git repository or worktree folder (no .git in it)." }
+    if ($key -eq (ConvertTo-PathKey ([IO.Path]::GetPathRoot($full))) -or $key -eq (ConvertTo-PathKey $HOME)) {
+        throw "-RepoRoot '$full' is a drive root or the home folder: too wide to link processes safely."
+    }
+    # Whole folder names only: the path must end at a separator, quote, space or the end of the line.
+    $roots += '(?<!\w)' + [regex]::Escape($key) + '(?=[\\"''\s]|$)'
+}
 
 $all = Get-CimInstance Win32_Process
 $alive = @{}
@@ -55,7 +71,7 @@ foreach ($p in $all) {
     if ($reason) {
         $key = ConvertTo-PathKey $cmd
         $linked = $false
-        foreach ($r in $roots) { if ($key.Contains($r)) { $linked = $true; break } }
+        foreach ($r in $roots) { if ($key -match $r) { $linked = $true; break } }
         $link = if (-not $roots) { 'unknown (no -RepoRoot)' } elseif ($linked) { 'linked to repository' } else { 'unrelated' }
         $found += [pscustomobject]@{
             Pid = $p.ProcessId; Name = $p.Name; Minutes = [int]$age; Why = $reason; Link = $link
@@ -70,6 +86,7 @@ $found | Sort-Object Minutes -Descending | Format-Table -AutoSize | Out-String -
 
 if (-not $Stop) {
     "Dry run: $($found.Count) leftover(s). Show the list to the user; re-run with -Stop -RepoRoot <path> only after they agree."
+    if (-not $roots) { "Pass -RepoRoot <path> to see which leftovers are linked to the repository." }
     return
 }
 if (-not $roots) {

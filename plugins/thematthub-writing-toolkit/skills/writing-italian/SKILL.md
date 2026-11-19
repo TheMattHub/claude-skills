@@ -67,7 +67,7 @@ New information goes at the end of the period. Evaluative adjectives may precede
 | in termini di (overused) | quanto a, per, sul piano di |
 | eventualmente = eventually | *infine, alla fine* (eventualmente = possibly) |
 
-The full tables of calques, false friends and Italianised English verbs are in
+The full table of calques, false friends and Italianised English verbs is in
 `references/calques.md`. Open it for any text longer than a paragraph, and when revising a
 text that "sounds translated".
 
@@ -78,7 +78,8 @@ un gruppo*, *affiancare i colleghi*, *condurre un'analisi*, *redigere un documen
 *mettere a frutto*, *mettere a disposizione*, *colmare una lacuna*, *portare a termine*,
 *avviare un progetto*, *avere dimestichezza con*, *padronanza di*.
 
-When the user corrects a phrase, add it to the table in `references/calques.md`.
+When the user corrects a phrase, add it to the table in `references/calques.md`; copy it to
+the short table above only if it comes up often.
 
 ## 4. Anglicisms
 

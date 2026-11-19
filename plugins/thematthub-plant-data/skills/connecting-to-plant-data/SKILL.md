@@ -62,7 +62,9 @@ the server's start flag only. Keep a test that walks every tool schema and fails
 
 - Sparkplug B **rebirth requests are commands** to an edge node: never send one. A node that
   publishes by alias then shows no values until its next birth; document that, don't fix it.
-- A person confirms before anything is written to a plant system (a setpoint, a command, or a recommendation that an operator system will act on): the software only proposes, because a wrong write can harm people or equipment and the person on site knows what the model does not.
+- The software never writes a setpoint or a command to a plant system: a wrong write can harm
+  people or equipment, and the person on site knows what the model does not. It proposes, and
+  a person acts on the proposal in their own system.
 - Recommendations leave only as records in an **outbox the operator configured** (a file or
   queue they own): never setpoints, method calls or publishes. A record has a closed vocabulary,
   a content-hash id of the proposal (model, scenario, state, seed, action, KPI, horizon) so
@@ -86,4 +88,4 @@ local broker), not only the plain ones.
 | Latest-value dict between connector and twin | Event log with cursor, `lost`, `gap` |
 | Timeout per read, not per request | One deadline for the whole request |
 | An MES adapter per system | One table adapter over `rows(table)`; a missing table reads empty |
-| Library private internals to cap sizes | Its public limits; a server that acknowledges none, or a library that does not say, gets one warning and is still read (the operator chose it) |
+| Library private internals to cap sizes | Its public limits. If the server acknowledges no limit, or the library exposes none, warn once and still read: the operator chose that server and accepted the risk |

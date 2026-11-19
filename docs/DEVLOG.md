@@ -14,7 +14,9 @@ Version 0.1.0 of every plugin kept in this repository (`thematthub-docs-export`:
 | thematthub-plant-data | connecting-to-plant-data |
 | thematthub-llm-integration | integrating-llms |
 
-`decks` is listed in the marketplace from its own repository.
+`thematthub-decks` and `thematthub-naga` are listed in the marketplace from their own repositories
+(`TheMattHub/decks`; the `simulation-study` skill folder of `TheMattHub/naga`, with the engine's MCP
+server declared in the marketplace entry).
 
 ## Checks
 
@@ -41,6 +43,10 @@ IDs are stable; prefix `MK`.
 - 2026-11-19: first build. Skills packaged from working copies, personal and project-specific
   content removed, trigger evals written and run (22 cases), whole-repository review applied.
 - 2026-11-19: `thematthub-docs-export` added with configurable templates (no company template shipped);
-  `emulate3d` moved out of this repository; repository named `claude-skills`.
+  a company-only plugin moved out of this repository; repository named `claude-skills`.
 - 2026-11-19: plugins renamed with the `thematthub-` prefix (directory names are global and permanent), icons added,
-  with/without quality evals added (`evals-quality/`), `system1` delisted (experimental).
+  with/without quality evals added (`evals-quality/`), an experimental plugin delisted.
+- 2026-11-19: final review applied (cleanup script links processes by whole folder names and
+  refuses wide roots; stopping any process asks first; plant write rule made absolute; model ids
+  updated). `decks` listed as `thematthub-decks`; `thematthub-naga` added; `renames` map added
+  for the names published in the first release.

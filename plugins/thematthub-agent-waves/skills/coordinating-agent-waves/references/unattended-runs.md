@@ -38,7 +38,8 @@ Ask before scheduling (Going unattended, step 2): one question, then wait. It st
 wake-up every 30 minutes that restarts work in this session, how it ends (the session, a reboot
 or 7 days), that agents will run and use tokens while the user is away, and whether leftover
 worker processes linked to this repository may be stopped during the run. Write the answers in
-the run log (`Permissions: wake-up yes/no; stop leftovers yes/no`). The wake prompt below reads
+the run log (`Permissions: wake-up yes/no; stop leftovers yes/no`; the second also covers hung
+child processes of your own agents). The wake prompt below reads
 that line.
 
 Measured cost of one wake with nothing to do, coordinator context ~300k tokens. Equivalents
@@ -73,8 +74,8 @@ Idle cost per hour at ~300k context, and the longest wait after a reset:
   ```text
   Restart check for <run>. Read the last 8 lines of <run log>, run `git worktree list` and
   ListAgents, and check <external processes, if any>. Run the leftover sweep
-  (`powershell.exe -NoProfile -ExecutionPolicy Bypass -File <this skill's folder>/references/reap-orphans.ps1`, folder filled in from the skill's base directory; Windows only). If the run log
-  records "stop leftovers yes", add `-Stop -RepoRoot <repository path>` and say how many it stopped;
+  (`powershell.exe -NoProfile -ExecutionPolicy Bypass -File <this skill's folder>/references/reap-orphans.ps1 -RepoRoot <repository path>`, folder filled in from the skill's base directory; Windows only). If the run log
+  records "stop leftovers yes", add `-Stop` and say how many it stopped;
   otherwise run it as the dry run and write the list to the log. Never stop a process the list marks as unrelated. If an agent is running or the NEXT line
   says done, reply in one line and stop. Otherwise resume from NEXT: re-dispatch only the dead
   item (one agent if a limit hit this run), restart a dead external process, then continue as

@@ -17,9 +17,9 @@ import requests
 
 ANTHROPIC_URL = "https://api.anthropic.com/v1/messages"
 # Model names go stale: check the provider's current model list before using this one.
-DEFAULT_CLAUDE = "claude-opus-5"  # check the claude-api skill for current model ids
+DEFAULT_CLAUDE = "claude-opus-5-5"  # check the claude-api skill for current model ids
 # Server-side refusal fallback; only these models accept the parameter (verify with the claude-api skill).
-FALLBACK_MODELS = {"claude-opus-5", "claude-fable-5-1"}
+FALLBACK_MODELS = {"claude-opus-5-5", "claude-opus-5", "claude-sonnet-5-5", "claude-fable-5-2", "claude-fable-5-1"}
 TIMEOUT = 600  # drafting a long document can take minutes
 LOCAL_TIMEOUT = 1800  # a laptop reading a long document on its processor
 

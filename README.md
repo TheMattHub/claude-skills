@@ -45,7 +45,13 @@ The plugin folders' own READMEs use a one-step form that adds the marketplace an
 | `thematthub-plant-data` | Connecting apps, simulations and digital twins to plant systems (OPC UA, MQTT, MES, historians) safely | Simulation and automation engineers |
 | `thematthub-llm-integration` | Adding language-model calls to an app: provider-agnostic client, validated JSON output, local models, a fake for tests | Developers who build apps that call a model |
 | `thematthub-agent-waves` | Advanced: coordinating several subagents on one repository in waves, with worktrees, briefs, independent checks and unattended runs | Experienced Claude Code users only. Its README lists what to know before running it unattended |
-| `decks` | Making presentations: brief and structure, design in Claude Slides, finishing in PowerPoint, company templates | Anyone who builds slide decks. Lives in [TheMattHub/decks](https://github.com/TheMattHub/decks) and is only listed here |
+| `thematthub-decks` | Making presentations: brief and structure, design in Claude Slides, finishing in PowerPoint, company templates | Anyone who builds slide decks. The PowerPoint steps need Windows with desktop PowerPoint |
+| `thematthub-naga` | Running a simulation study for a decision (how many machines, staff or docks; will a change cope with demand) with the Naga engine | Anyone with a capacity or what-if question. Needs Python and the engine: `pip install "nagasim[mcp]"` |
+
+The last two live in their own repositories and are only listed here, so installing them fetches from those repositories:
+
+- `thematthub-decks` comes from [TheMattHub/decks](https://github.com/TheMattHub/decks). Its skill appears as `decks:making-presentations`, because the plugin keeps its own name inside. Its README says what it needs.
+- `thematthub-naga` takes the `simulation-study` skill from [TheMattHub/naga](https://github.com/TheMattHub/naga) (Apache-2.0) and follows that repository's main branch. While the plugin is enabled, Claude Code starts the engine's tool server on your machine in every session (`naga mcp --tools study --root <your project folder>`). The server reads and writes model and study files only inside that folder, and network access is off. If the `naga` command is not installed, the plugin shows a server error until you install the engine. Keep the engine up to date (`pip install -U "nagasim[mcp]"`) so it matches the skill.
 
 ## Which ones should I install first?
 

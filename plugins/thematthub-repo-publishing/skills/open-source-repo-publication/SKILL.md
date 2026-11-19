@@ -24,7 +24,8 @@ Claude confirms each of these with you before doing it:
 - creating or renaming a repository
 - changing a repository's visibility
 - any push
-- any history rewrite
+- any history rewrite, including changing the author of existing commits
+- changing repository settings (description, topics, Discussions, security reporting)
 - publishing a release
 
 ## Workflow

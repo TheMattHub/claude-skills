@@ -38,7 +38,7 @@ blue/violet pair that red-blind readers see as one colour (Delta E 0.9). Load th
    and fills but never overrides a validated palette's surfaces or accent.
 8. **Contrast:** body text 4.5:1, large text and marks 3:1 (`contrast()` exported by the dataviz
    validator, or `python <this skill's folder>/scripts/contrast.py "#fg" "#bg" ...`, which prints the ratio of each pair
-   and exits 1 below `--min`). Muted text is where palettes fail; check it on both bg and panel. Test contrast and a visible focus ring
+   and exits 1 below `--min`: pass `--min 4.5` for body text, the default 3 is for large text and marks; `py` instead of `python` where Windows has only the launcher). Muted text is where palettes fail; check it on both bg and panel. Test contrast and a visible focus ring
    in every theme, not only the default one.
 9. **Show options as rendered pages** (HTML mock-ups, pushed to Figma with `html_to_figma` when the user
    wants Figma), including a strip of candidate tones on the same elements, and recommend one.

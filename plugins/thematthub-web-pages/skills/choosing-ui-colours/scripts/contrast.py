@@ -11,7 +11,7 @@ def luminance(hex_colour):
     h = hex_colour.lstrip("#")
     if len(h) == 3:
         h = "".join(c * 2 for c in h)
-    if len(h) != 6:
+    if len(h) != 6 or any(c not in "0123456789abcdefABCDEF" for c in h):
         raise ValueError(f"not a hex colour: {hex_colour}")
     chans = []
     for i in (0, 2, 4):
@@ -27,16 +27,22 @@ def ratio(a, b):
 
 def main(argv):
     minimum = 3.0
-    if "--min" in argv:
-        i = argv.index("--min")
-        minimum = float(argv[i + 1])
-        del argv[i:i + 2]
-    if len(argv) < 2 or len(argv) % 2:
-        print(__doc__)
+    try:
+        if "--min" in argv:
+            i = argv.index("--min")
+            if i + 1 >= len(argv):
+                raise ValueError("--min needs a number, e.g. --min 4.5")
+            minimum = float(argv[i + 1])
+            del argv[i:i + 2]
+        if len(argv) < 2 or len(argv) % 2:
+            raise ValueError("give colours in pairs: foreground background")
+        ratios = [ratio(a, b) for a, b in zip(argv[0::2], argv[1::2])]
+    except (ValueError, IndexError) as e:
+        # A bad colour or a missing --min value gets the usage text, not a traceback.
+        print(f"error: {e}\n\n{__doc__}")
         return 2
     failed = False
-    for a, b in zip(argv[0::2], argv[1::2]):
-        r = ratio(a, b)
+    for (a, b), r in zip(zip(argv[0::2], argv[1::2]), ratios):
         # Two decimals: at one decimal a failing 4.48 prints as "4.5" next to FAIL.
         print(f"{a} on {b}: {r:.2f}  3:1 {'pass' if r >= 3 else 'FAIL'}  4.5:1 {'pass' if r >= 4.5 else 'FAIL'}")
         failed = failed or r < minimum
