@@ -1,6 +1,7 @@
 {
   "name": "agent-waves",
   "version": "0.1.0",
+  "icon": "./.claude-plugin/icon.png",
   "description": "Coordinate several Claude Code subagents working on one repository: briefs, worktrees, merges, independent checks and unattended runs.",
   "author": { "name": "Matteo Brunetti" },
   "license": "MIT",

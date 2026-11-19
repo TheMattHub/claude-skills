@@ -1,6 +1,7 @@
 {
   "name": "llm-integration",
   "version": "0.1.0",
+  "icon": "./.claude-plugin/icon.png",
   "description": "Add language-model calls (Claude, OpenAI, Ollama, LM Studio) to an app or script, with structured JSON extraction and local-model choice.",
   "author": { "name": "Matteo Brunetti" },
   "license": "MIT",
