@@ -11,9 +11,13 @@ Six skills for writing that a stranger can follow. Claude loads each one when yo
 | `writing-italian` | Natural Italian prose, with tables of calques and false friends; cover letters. | "Scrivi una lettera di presentazione." |
 | `analysing-competitors` | Competitor analysis where every claim says how it was verified. | "Run a market scan of tools like ours." |
 
+## What it reads, writes and runs
+
+The skills are instructions; they run nothing. One script, `skills/writing-course-handbooks/scripts/check_handbook.py`, reads the markdown file you name and prints findings. It writes nothing and uses no network.
+
 ## Requirements
 
-- Python 3, only for the handbook checker (`skills/writing-course-handbooks/scripts/check_handbook.py`).
+- Python 3, the only requirement, and only for that script.
 
 ## Optional companions
 

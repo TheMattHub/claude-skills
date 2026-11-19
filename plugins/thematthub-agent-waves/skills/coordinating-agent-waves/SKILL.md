@@ -35,7 +35,7 @@ One agent, or several agents that only read (exploration, research). Spawn them 
 | Wave end | Run SDD's checkpoint review (full suite once, fingerprints, whole-branch review with its mandate). Every wave end is a checkpoint. Task agents reported 0 bugs where the whole-branch review found 11: never skip it |
 | Wave end with a UI | SDD's real-app pass, plus: log bugs under the coordinator's own ID prefix, drive both themes and 360 px, open the page in the user's own browser, and keep a task free for their feedback round (it is usually large: look, layout shift, clutter) |
 | Timings while agents run tests | Noise: re-measure on a quiet machine before acting |
-| Leftover processes (orphaned pytest/xdist workers, headless browsers, a finished agent's background shells) | At every merge, wave end and restart check: `TaskStop` any background task of a finished agent still listed, then run `references/reap-orphans.ps1` in this skill's folder (Windows only; elsewhere list and stop leftover child processes by hand with `ps` and `pkill`; dry run lists; `-Stop` ends trees whose parent is gone or whose worktree was removed; it skips the user's own browser and exited zombies). Run it through `powershell.exe -ExecutionPolicy Bypass`; `pwsh` from Git Bash loses its modules. In one run, four workers sat 2+ hours on the laptop unseen |
+| Leftover processes (orphaned pytest/xdist workers, headless browsers, a finished agent's background shells) | At every merge, wave end and restart check: `TaskStop` any background task of a finished agent still listed, then run the dry run of `references/reap-orphans.ps1` in this skill's folder (Windows only; elsewhere list leftover child processes by hand with `ps`). If it lists leftovers linked to this repository, show the list to the user and stop them only after the user says yes in this conversation, re-running with `-Stop -RepoRoot <repository path>` (add worktree paths if they are outside it). Never stop a process the list marks as unrelated: it may be the user's own dev server or notebook. The script skips the user's own browser and exited zombies. Run it through `powershell.exe -ExecutionPolicy Bypass`; `pwsh` from Git Bash loses its modules. In one run, four workers sat 2+ hours on the laptop unseen |
 | Agent quiet or "stuck" | `references/failure-modes.md`, section "Stuck check", in order, down to the process tree |
 | User leaves you running ("I'll be away", "work autonomously", overnight) | Section "Going unattended" below, before the first dispatch |
 | Other Claude sessions work the same repo (peer sessions) | `references/peer-sessions.md`: one integrator owns the base and outward steps; a shared board file (`references/board-template.md`) holds sessions, locks, authority and handoffs; messages are only a doorbell; every wake reads the board |
@@ -45,16 +45,23 @@ One agent, or several agents that only read (exploration, research). Spawn them 
 
 ## Going unattended
 
-When the user says they will be away and the run should keep going, do these steps without
-being asked, before the first dispatch:
+When the user says they will be away and the run should keep going, do these steps before the
+first dispatch. Nothing is scheduled until the user has answered step 2.
 
 1. Write the run log (outside git: add `.superpowers/` to `.git/info/exclude`) and end it with a `NEXT:` line (`references/unattended-runs.md`).
-2. Set the restart trigger yourself: `CronCreate` with cron `13,43 * * * *`, recurring, and the
-   wake prompt from the reference, naming this run's log. Skip this if a trigger already covers the run (`CronList`).
-3. Tell the user in one block: the trigger is set (every 30 min, ends with the session, a reboot
+2. Ask the user one question and wait for the answer. State exactly what you would set up: a
+   wake-up every 30 minutes that restarts work in this session; it ends with the session, a
+   reboot or after 7 days; agents will run and use tokens while the user is away; and whether you
+   may also stop leftover worker processes linked to this repository during the run. Record the
+   answers in the run log. If the user declines the wake-up, do not schedule it.
+3. If agreed, `CronCreate` with cron `13,43 * * * *`, recurring, and the wake prompt from the
+   reference, naming this run's log. Skip this if a trigger already covers the run (`CronList`).
+   The wake prompt runs the cleanup with `-Stop -RepoRoot` only if the run log records that
+   permission; otherwise it runs the dry run and writes the list to the log.
+4. Tell the user in one block: the trigger is set (every 30 min, ends with the session, a reboot
    or 7 days); **"Type `/compact` now: I cannot run it, and a small context makes every wake
    ~5x cheaper"**; set "never sleep" on mains power.
-4. At the end of the run, `CronDelete` the trigger and report.
+5. At the end of the run, `CronDelete` the trigger and report.
 
 ## Discipline rules
 

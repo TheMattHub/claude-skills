@@ -58,33 +58,18 @@ New information goes at the end of the period. Evaluative adjectives may precede
 |---|---|
 | sono eccitato / entusiasta di candidarmi | ho letto con interesse l'annuncio |
 | applicare per una posizione | candidarsi a / proporre la propria candidatura per |
-| non vedo l'ora di sentirLa | resto a disposizione per un colloquio |
-| grazie per il Suo tempo | La ringrazio per l'attenzione |
 | ho X anni di esperienza in | ho maturato X anni di esperienza in / nel campo di |
 | sono responsabile per | sono responsabile di, mi occupo di, seguo |
 | lavoro su un progetto | lavoro a un progetto, seguo un progetto |
 | indirizzare un problema | affrontare un problema |
 | fare una decisione / fare senso | prendere una decisione / avere senso |
 | realizzare che | rendersi conto che |
-| guidare risultati | ottenere, raggiungere risultati |
-| portare valore, fare la differenza | name the concrete contribution |
-| questo mi ha permesso di (serial) | *esperienza che mi ha permesso di*, or merge into the previous period |
-| è la sede / il ruolo che cerco | è la sede in cui desidero lavorare |
-| sto investendo su (competenze) | sto approfondendo, mi sto formando su |
 | in termini di (overused) | quanto a, per, sul piano di |
-| basato su (overused) | fondato su, a partire da, alimentato da |
-| alla fine della giornata | in definitiva |
-| supportare (overused) | affiancare, sostenere, assistere |
 | eventualmente = eventually | *infine, alla fine* (eventualmente = possibly) |
-| consistente = consistent | *coerente* (consistente = substantial) |
-| assumere = assume | *presumere, ipotizzare* (assumere = hire, take on) |
-| attitudine = attitude | *atteggiamento* (attitudine = aptitude) |
-| confidente = confident | *sicuro, fiducioso* |
-| educazione = education | *formazione, istruzione, studi* |
-| evidenza = evidence | *prova, riscontro, dato* |
-| finalizzare = finalize | *portare a termine, completare* |
-| processare dati | elaborare dati |
-| schedulare, settare, customizzare, deployare | pianificare, impostare, personalizzare, mettere in produzione |
+
+The full tables of calques, false friends and Italianised English verbs are in
+`references/calques.md`. Open it for any text longer than a paragraph, and when revising a
+text that "sounds translated".
 
 **Collocations that sound native:** *maturare un'esperienza*, *acquisire / consolidare
 competenze*, *conseguire una laurea / un risultato*, *ricoprire un ruolo*, *svolgere
@@ -93,7 +78,7 @@ un gruppo*, *affiancare i colleghi*, *condurre un'analisi*, *redigere un documen
 *mettere a frutto*, *mettere a disposizione*, *colmare una lacuna*, *portare a termine*,
 *avviare un progetto*, *avere dimestichezza con*, *padronanza di*.
 
-When the user corrects a phrase, add it to this table.
+When the user corrects a phrase, add it to the table in `references/calques.md`.
 
 ## 4. Anglicisms
 
@@ -142,7 +127,7 @@ marks, no slogans. Address a person with *Lei*; never *tu* unless the reader use
 
 Read the text as an Italian reader would, aloud if possible, then verify:
 
-- [ ] No sentence fails the back-translation test; nothing from the calque table.
+- [ ] No sentence fails the back-translation test; nothing from the calque tables.
 - [ ] Each paragraph has at least one connective and one subordinate clause; no run of
       three short main clauses.
 - [ ] Sentence openings vary; no serial first-person verbs; no stray *io*.

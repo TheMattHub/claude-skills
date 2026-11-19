@@ -1,6 +1,6 @@
 ---
 name: choosing-ui-colours
-description: "Use when choosing or reviewing the colours of an interface - a palette, theme, light/dark mode, brand or accent colour, status colours (running, idle, down, warning), chart or series colours, scenario A vs B colours - or when a UI \"needs more depth\", \"pick better colours\", \"make a dark mode\", \"more blue\", or mock-ups are being drawn for a visual direction. Uses the ui-ux-pro-max and dataviz skills when installed and adds the rules they miss. Not for layout-only or copy changes."
+description: "Use when choosing or reviewing the colours of an interface - a palette, theme, light/dark mode, brand or accent colour, status colours (running, idle, down, warning), chart or series colours, scenario A vs B colours - or when a UI \"needs more depth\", \"pick better colours\", \"make a dark mode\", \"more blue\", or mock-ups are being drawn for a visual direction. Uses the ui-ux-pro-max and dataviz skills when installed and adds the rules they miss. Not for layout-only or copy changes, or for applying a colour the user has already specified."
 ---
 
 # Choosing UI colours
@@ -14,8 +14,8 @@ blue/violet pair that red-blind readers see as one colour (Delta E 0.9). Load th
 
 1. **Load the helpers, if installed.** `ui-ux-pro-max` (run `--design-system` with `--density` for dashboards; use its
    UX rules, not its palettes: they are generic Tailwind slate) and `dataviz` (its validator is the gate).
-   Neither installed: follow the rules in this skill and check every colour pair with any WCAG contrast
-   calculator (step 8), plus a colour-blindness simulator for series colours (step 4).
+   Neither installed: follow the rules in this skill and check every colour pair with `scripts/contrast.py` from this
+   skill's folder, called by absolute path (step 8), plus a colour-blindness simulator for series colours (step 4).
 2. **Name the roles before any hex.** Surfaces (bg, panel, raised, line), text (text, muted, dim),
    one accent for everything clickable, series colours (identity), status colours (state), deltas.
 3. **60-30-10.** About 60% background, 30% panels and cards, 10% accent. Two to four core colours plus
@@ -37,7 +37,8 @@ blue/violet pair that red-blind readers see as one colour (Delta E 0.9). Load th
    small head script before first paint (no flash; storage in try/catch). A host app's theme may give fonts
    and fills but never overrides a validated palette's surfaces or accent.
 8. **Contrast:** body text 4.5:1, large text and marks 3:1 (`contrast()` exported by the dataviz
-   validator, or any WCAG contrast calculator). Muted text is where palettes fail; check it on both bg and panel. Test contrast and a visible focus ring
+   validator, or `python <this skill's folder>/scripts/contrast.py "#fg" "#bg" ...`, which prints the ratio of each pair
+   and exits 1 below `--min`). Muted text is where palettes fail; check it on both bg and panel. Test contrast and a visible focus ring
    in every theme, not only the default one.
 9. **Show options as rendered pages** (HTML mock-ups, pushed to Figma with `html_to_figma` when the user
    wants Figma), including a strip of candidate tones on the same elements, and recommend one.

@@ -1,6 +1,6 @@
 # Using Claude Code
 
-This page is for engineers who have never used Claude Code. After reading it you can install it, sign in, run a first session on one of your own projects, and work in the habits that give the best results.
+This page is for engineers who have never used Claude Code. To follow it you need a paid Claude plan (Pro, Max, Team or Enterprise) and a terminal. After reading it you can install it, sign in, run a first session on one of your own projects, and work in the habits that give the best results.
 
 Claude Code is Claude with access to your project folder. It reads your files, edits them, runs commands such as your tests, and works with git (the tool that records the history of your files), while you watch and approve. You describe what you want in plain language.
 
@@ -15,7 +15,7 @@ All of these use the same engine, so your project settings and instruction files
 
 ## Install and sign in
 
-You need a paid Claude plan (Pro, Max, Team or Enterprise) and a terminal. On Windows, [Git for Windows](https://git-scm.com/downloads/win) is recommended so Claude Code can use the Bash tool (a shell that runs commands); without it Claude Code uses PowerShell.
+On Windows, [Git for Windows](https://git-scm.com/downloads/win) is recommended so Claude Code can use the Bash tool (a shell that runs commands); without it Claude Code uses PowerShell.
 
 1. Open a terminal. On Windows PowerShell, the prompt starts with `PS C:\`.
 2. Run the install command for your system.
@@ -33,6 +33,8 @@ You need a paid Claude plan (Pro, Max, Team or Enterprise) and a terminal. On Wi
    ```
 
    The command shows no progress while it downloads. This is normal.
+
+   **If the install fails.** Two cases are common. Behind a company proxy (a server that your network sends web traffic through), the download can be blocked: see the official [network configuration page](https://code.claude.com/docs/en/network-config.md) for the proxy settings, and ask your IT team for the proxy address. Without administrator rights, or when a folder cannot be written to, see [Permission errors during installation](https://code.claude.com/docs/en/troubleshoot-install.md#permission-errors-during-installation) on the official troubleshooting page. The [setup page](https://code.claude.com/docs/en/setup.md) lists the system requirements.
 3. Open a new terminal window and check the install:
 
    ```text

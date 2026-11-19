@@ -4,6 +4,16 @@ A catalogue (a "marketplace") of plugins for Claude Code, Anthropic's coding ass
 
 If you have never used Claude Code, plugins or skills, start with the guides under [New to Claude?](#new-to-claude) and come back here.
 
+## Example
+
+Here is what a plugin does for you. With `thematthub-writing-toolkit` (the first plugin in the table below) installed, you type:
+
+```text
+Write the day-one setup guide for the course participants. They install the simulator and run the first model on their own.
+```
+
+Claude recognises that the request matches the skill `writing-course-handbooks`. It then writes for a reader who cannot ask you questions: every term is explained before it is used, every step shows the exact command and what the reader should see afterwards, and the guide ends with a table of what to do when a step fails.
+
 ## Quick start
 
 You need Claude Code installed and signed in ([guide 2](docs/2-using-claude-code.md) shows how). Then, inside Claude Code, type:
@@ -34,23 +44,14 @@ The plugin folders' own READMEs use a one-step form that adds the marketplace an
 | `thematthub-docs-export` | Exporting a project's markdown documentation to Word and PDF, with your own templates and rendered Mermaid diagrams | Anyone who sends documentation to clients or colleagues. Written for Windows |
 | `thematthub-plant-data` | Connecting apps, simulations and digital twins to plant systems (OPC UA, MQTT, MES, historians) safely | Simulation and automation engineers |
 | `thematthub-llm-integration` | Adding language-model calls to an app: provider-agnostic client, validated JSON output, local models, a fake for tests | Developers who build apps that call a model |
-| `thematthub-agent-waves` | Advanced: coordinating several subagents on one repository in waves, with worktrees, briefs, independent checks and unattended runs | Experienced Claude Code users |
+| `thematthub-agent-waves` | Advanced: coordinating several subagents on one repository in waves, with worktrees, briefs, independent checks and unattended runs | Experienced Claude Code users only. Its README lists what to know before running it unattended |
 | `decks` | Making presentations: brief and structure, design in Claude Slides, finishing in PowerPoint, company templates | Anyone who builds slide decks. Lives in [TheMattHub/decks](https://github.com/TheMattHub/decks) and is only listed here |
-| `system1` | Guided setup and diagnosis for the System-1 gateway, which gives Claude Code fast decisions from local models | Users of that gateway. Lives in [TheMattHub/Sys1-AI-Gateway](https://github.com/TheMattHub/Sys1-AI-Gateway) and is only listed here |
 
 ## Which ones should I install first?
 
-Install `thematthub-writing-toolkit` plus one plugin that matches your work, and nothing else yet. Claude reads the short description of every installed skill on every request, so each extra plugin costs a little context (the text Claude holds in view) on every turn, and when the descriptions get too many Claude Code drops the least used ones. After a few weeks, run `/skill-doctor` to see what each skill costs and which ones you never used, and remove those. [Guide 3](docs/3-skills-and-plugins.md) explains how.
+Install the few plugins you will use: `thematthub-writing-toolkit` plus one that matches your work is a good start. Claude reads the short description of every installed skill on every request, so each plugin costs a little context (the text Claude holds in view) on every turn. Run `/skill-doctor` or `claude plugin details <plugin>` to see the cost, and after a few weeks remove what you did not use. [Guide 3](docs/3-skills-and-plugins.md) explains how.
 
-## Example
-
-With `thematthub-writing-toolkit` installed, you type:
-
-```text
-Write the day-one setup guide for the course participants. They install the simulator and run the first model on their own.
-```
-
-Claude recognises that the request matches the skill `writing-course-handbooks`. It then writes for a reader who cannot ask you questions: every term is explained before it is used, every step shows the exact command and what the reader should see afterwards, and the guide ends with a table of what to do when a step fails.
+The `thematthub-` prefix is there because plugin names are global in Anthropic's official directory, so these carry the owner's name.
 
 ## Official plugins worth adding
 

@@ -17,6 +17,16 @@ Run the audit before writing any README or LICENSE file: a repo that looks fine 
 current state can still have real PII or secrets sitting in old commits, or turn out to not
 be the user's to publish at all.
 
+## Ask first
+
+Claude confirms each of these with you before doing it:
+
+- creating or renaming a repository
+- changing a repository's visibility
+- any push
+- any history rewrite
+- publishing a release
+
 ## Workflow
 
 1. **Audit before proceeding.**
@@ -84,19 +94,10 @@ be the user's to publish at all.
    host-scoped cache (see playbook) — don't work around it by uploading files through a
    browser instead, which bypasses `.gitignore` entirely.
 10. **Show the project working in the README.** A public repo whose README is text-only
-    reads as abandoned no matter how good the code is. For a project with a user interface
-    or visual output, screenshot the running app; a library or a skills repository instead
-    shows a short usage example or the output of a real command. For screenshots: run the app on the demo dataset, walk its pages, and capture the
-    few screens that actually show what it does: one **hero image** directly under the
-    title/badges (the screen that shows the product working — the map, the dashboard, the
-    main output — not a marketing page or a settings form), then a `## Screenshots`
-    section with one image per real capability the feature list claims. If a page has a
-    signature animation, capture it as a short GIF alongside the stills. Lay them out so
-    the README still fits on a screen or two: small opening visual under the intro, one
-    full-width hero in the section, the rest as a row of click-to-enlarge thumbnails —
-    never a stack of full-width images. Commit them under `docs/screenshots/` and
-    reference them with relative paths. See the playbook for the capture recipe and the
-    exact layout markup.
+    reads as abandoned no matter how good the code is. Use screenshots for a project with an
+    interface, and a usage example or real command output for a library or a skills
+    repository. See the playbook ("README screenshots") for the layout.
+
 11. **Build every public-facing image from the demo dataset only.** Never screenshot or
     export from the real/private instance — that leaks the same PII through images
     instead of data files. Screenshots also pin the demo data down: if the dataset can't

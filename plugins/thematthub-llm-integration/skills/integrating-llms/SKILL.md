@@ -7,7 +7,12 @@ description: "Use when an app or script needs to call a language model: adding A
 
 ## Overview
 
-One small module and plain HTTP (`requests`), not vendor SDKs: two wire formats cover every provider.
+Check the provider's current model list before using any model name from these files; names go stale.
+
+One small module and plain HTTP (`requests`) by default: two wire formats cover every provider.
+Trade-off: plain HTTP means fewer dependencies and one code path for every OpenAI-compatible server; the vendor
+SDK gives typed responses, built-in retries and streaming helpers. Choose the SDK when the app is tied to one
+provider, needs streaming or tool use, or would otherwise rewrite retries and response parsing by hand.
 The model does judgement and writing; plain code does facts, lookups, scores and cross-checks.
 Copy `references/llm.py` and adapt; it is the tested version from a shipped app.
 
@@ -57,7 +62,7 @@ Copy `references/llm.py` and adapt; it is the tested version from a shipped app.
 
 ## Common mistakes
 
-- Using a vendor SDK per provider: three dependencies and three error shapes for one POST.
+- Adding a vendor SDK per provider by reflex: three dependencies and three error shapes for one POST (fine when you use only one provider and want its typed responses or streaming).
 - Letting the model compute what code can (scores, dates relative to today, deduplication, lookups).
 - Retrying the same prompt on invalid JSON instead of sending the validator's errors back.
 - Choosing a local model from leaderboards: the benchmark on your own tasks picked a 6 GB model over a 20 B one.

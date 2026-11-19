@@ -1,6 +1,6 @@
 ---
 name: connecting-to-plant-data
-description: "Use when an app, simulation or digital twin reads live data from a plant or industrial system - OPC UA, MQTT, Sparkplug B, REST, MES or SQL tables, historians, PLC tag servers (Emulate3D, Kepware) - or sends recommendations, setpoints or commands back to one; when a model file, config or LLM tool would name a host, credential or query; or when reviewing such a connector for security."
+description: "Use when an app, simulation or digital twin reads live data from a plant or industrial system - OPC UA, MQTT, Sparkplug B, REST, MES or SQL tables, historians, PLC tag servers (Kepware) - or sends recommendations, setpoints or commands back to one; when a model file, config or LLM tool would name a host, credential or query; or when reviewing such a connector for security."
 ---
 
 # Connecting to plant data
@@ -13,16 +13,16 @@ operator who starts the process defines what that connection is. The generic rul
 only, fakes in tests, optional extras) are assumed. This skill covers the parts that are easy to
 get wrong.
 
-**What this skill assumes.** An app or simulation (for example a digital twin, which repeats a "twin cycle": read plant data, update the model) whose configuration lives in a "model file" that may be shared or written by someone else, and which reads plant systems through connector code and may write recommendations back. The simulation core is the part that computes the model; it never talks to the plant directly. Names like `Secret` and `changes(source, cursor)` are suggested shapes for your own code, not an existing library.
+**What this skill assumes.** Any app that reads plant systems through a connector (a plain OPC UA or MQTT client is enough) and takes some of its configuration from a file that may be shared or written by someone else: a model file, a config file or an LLM tool call. The file or tool is untrusted input; the code that connects is trusted. Where the author's own app has a simulation or digital twin, the part that computes the model never talks to the plant, and a loop reads plant data and then updates the model. Names like `Secret` and `changes(source, cursor)` are one example implementation of rules stated in general terms below, not an existing library.
 
 ## Where things are defined
 
 | Thing | Lives in | Never in |
 |---|---|---|
-| Host, port, URL, DSN, query | Operator's connections file (start flag) or the app's dialog | Model file, agent tool argument |
-| Credential | A `Secret` resolved from the environment or the OS store; `repr` prints `<secret>` | URL, model file, logs, error text, pickles |
-| Env vars a model file may read | A fixed prefix allow-list (e.g. `APP_DATA_*`) | Any other name; no `${NAME}` expansion for live sources |
-| Which nodes/topics/tables | Model file, by connection name | Anywhere that also chooses the host |
+| Host, port, URL, DSN, query | Operator's connections file (start flag) or the app's dialog | Model or config file, agent tool argument |
+| Credential | A secret value resolved from the environment or the OS store, never printed (example: a `Secret` type whose `repr` prints `<secret>`) | URL, model or config file, logs, error text, pickles |
+| Env vars a model or config file may read | A fixed prefix allow-list (e.g. `APP_DATA_*`) | Any other name; no `${NAME}` expansion for live sources |
+| Which nodes/topics/tables | Model or config file, by connection name | Anywhere that also chooses the host |
 
 Agent surfaces (MCP, assistant) get **no tool and no parameter** for connections: they come from
 the server's start flag only. Keep a test that walks every tool schema and fails on one.
@@ -45,12 +45,14 @@ the server's start flag only. Keep a test that walks every tool schema and fails
 - **Bound before parsing.** Read the declared length and refuse an oversized message before you
   allocate memory for it. Every size, count, rate and time has a ceiling in code; over it is
   dropped and counted, never grown. The operator may lower a bound below its ceiling; a model or tool may not.
-- **One pull contract for pollers and subscriptions:** `changes(source, cursor) ->` events
-  `(source, key, value, source_time, received, seq)` in receipt order, delivered at least once,
-  with an exact `lost` count and a `gap` flag. An event **asserts a state, never an
+- **One pull contract for pollers and subscriptions:** the consumer asks for what changed since
+  a cursor and gets events (source, key, value, source time, received time, sequence number) in
+  receipt order, delivered at least once, with an exact count of lost events and a gap flag.
+  Example shape: `changes(source, cursor)`. An event **asserts a state, never an
   increment**, so applying it twice is harmless. A latest-value store hides losses: don't.
-- A subscription runs in one daemon thread owned by whoever runs the twin cycle. The simulation
-  core never imports a connector, and no connector calls into a run.
+- A subscription runs in one background thread owned by the code that consumes the data. The
+  code that computes results (a simulation, a model) never imports a connector, and no connector
+  calls into a run, so a hostile server cannot reach the computation.
 - **Values are data:** scalars into numeric and boolean targets only. Plant text never becomes an
   expression, path, block name or anything that selects code.
 - Timestamps: normalise to UTC. Report naive timestamps, don't guess their zone. Keep source time
@@ -60,6 +62,7 @@ the server's start flag only. Keep a test that walks every tool schema and fails
 
 - Sparkplug B **rebirth requests are commands** to an edge node: never send one. A node that
   publishes by alias then shows no values until its next birth; document that, don't fix it.
+- A person confirms before anything is written to a plant system (a setpoint, a command, or a recommendation that an operator system will act on): the software only proposes, because a wrong write can harm people or equipment and the person on site knows what the model does not.
 - Recommendations leave only as records in an **outbox the operator configured** (a file or
   queue they own): never setpoints, method calls or publishes. A record has a closed vocabulary,
   a content-hash id of the proposal (model, scenario, state, seed, action, KPI, horizon) so

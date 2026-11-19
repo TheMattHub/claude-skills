@@ -16,6 +16,7 @@ from urllib.parse import urlparse
 import requests
 
 ANTHROPIC_URL = "https://api.anthropic.com/v1/messages"
+# Model names go stale: check the provider's current model list before using this one.
 DEFAULT_CLAUDE = "claude-opus-5"  # check the claude-api skill for current model ids
 # Server-side refusal fallback; only these models accept the parameter (verify with the claude-api skill).
 FALLBACK_MODELS = {"claude-opus-5", "claude-fable-5-1"}

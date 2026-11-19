@@ -128,6 +128,11 @@ Capture from a throwaway instance loaded with the demo dataset, never the real o
 A column of full-width screenshots, one per feature, pushes the install instructions
 below three screens of scrolling. Use this shape instead:
 
+- Capture the few screens that show what the app does: one hero image directly under the
+  title and badges (the product working, not a marketing page or a settings form), then a
+  `## Screenshots` section with one image per capability the feature list claims. A signature
+  animation goes in as a short GIF beside the stills. Commit them under `docs/screenshots/`
+  and reference them by relative path.
 - **Opening visual, under the intro paragraphs and above `## What it does`:** something
   small and alive — the animated GIF if there is one, otherwise a short banner-shaped
   crop. Not the tallest screenshot in the set.

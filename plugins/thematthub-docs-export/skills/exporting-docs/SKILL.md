@@ -34,7 +34,7 @@ With no other option the script takes `README.md`, `HANDBOOK.md`, `CONCEPTUAL_MO
 
 1. Ask who receives the file and in which format, unless the user said so. Client name and classification go on the cover.
 2. Check that `export/` is in the project's `.gitignore`. The output is generated and stays out of git.
-3. Leave out documents the recipient should not see. The DEVLOG and any findings file are internal by default: ask before including them in something that leaves your organisation.
+3. Before exporting for someone outside the team, ask which documents are internal and leave those out. Development logs and findings files usually are: the recipient has no need for them, and they often hold things not meant to leave the team.
 
 ## After exporting
 

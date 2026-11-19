@@ -14,7 +14,7 @@ Version 0.1.0 of every plugin kept in this repository (`thematthub-docs-export`:
 | thematthub-plant-data | connecting-to-plant-data |
 | thematthub-llm-integration | integrating-llms |
 
-`decks` and `system1` are listed in the marketplace from their own repositories.
+`decks` is listed in the marketplace from its own repository.
 
 ## Checks
 
@@ -42,3 +42,5 @@ IDs are stable; prefix `MK`.
   content removed, trigger evals written and run (22 cases), whole-repository review applied.
 - 2026-11-19: `thematthub-docs-export` added with configurable templates (no company template shipped);
   `emulate3d` moved out of this repository; repository named `claude-skills`.
+- 2026-11-19: plugins renamed with the `thematthub-` prefix (directory names are global and permanent), icons added,
+  with/without quality evals added (`evals-quality/`), `system1` delisted (experimental).

@@ -1,6 +1,6 @@
 # Docs-site best practices (surveyed October 2026)
 
-Source: a live survey of NumPy, pandas, SciPy, SimPy, salabim, Mesa, Ciw docs and the Diataxis and llms.txt references. Tags: verified (fetched 2026-10-18; WebFetch summaries, not verbatim), snip, [m] memory, n/f not found. AnyLogic answered 403; Plant Simulation help is behind a login.
+Re-check any claim older than six months. Source: a live survey of NumPy, pandas, SciPy, SimPy, salabim, Mesa, Ciw docs and the Diataxis and llms.txt references. Tags: verified (fetched 2026-10-18; WebFetch summaries, not verbatim), snip, [m] memory, n/f not found. AnyLogic answered 403; Plant Simulation help is behind a login.
 
 ## Best practices
 1. Audience cards on the landing page (newcomer / concepts / reference / contributor). NumPy, pandas, SciPy. Gets each reader to the right page in one click. verified
@@ -8,7 +8,7 @@ Source: a live survey of NumPy, pandas, SciPy, SimPy, salabim, Mesa, Ciw docs an
 3. Four-way split tutorial / how-to / reference / explanation, named plainly. Ciw (and Diataxis). Each page has one job. verified
 4. "Coming from X" comparison pages (R, SQL, Excel). pandas. Routes planners and analysts by tool they already know. verified
 5. Runnable example on the landing page, plus install line next to it. SimPy (example), Mesa (install). Proves value in 10 lines. verified; combine both
-6. Examples built up in steps (bank model, then variants). salabim. Teaches modelling, not only syntax. verified
+6. Examples built up in steps (for example salabim's bank model, then variants). salabim. Teaches modelling, not only syntax. verified
 7. Version and release date in the header, switcher, downloadable HTML. NumPy, pandas, SciPy. Readers and agents know which version they read. verified
 8. Migration guide per major version and release notes in nav. Mesa, NumPy, pandas. Trust and upgrade path. verified
 9. "Citing" page with CITATION.cff / JOSS. Mesa, Ciw. Academic credibility. verified

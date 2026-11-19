@@ -10,7 +10,8 @@ Draft everything; the user publishes. A published release is outward-facing and 
 
 ## Before anything
 
-1. **Repo-specific file?** Check `references/<repo>.md`. It overrides
+1. **Repo-specific file?** Check `references/<repo>.md`. This is an optional file you may add
+   for a repository; none ships with this skill. If present, it overrides
    the generic steps below. A repo released more than once gets one, written after its first release.
    `references/example-release-notes.md` shows the notes style and what such a file can hold.
 2. **What fires a publish.** Read `.github/workflows/*`: which events (`release: published`,
@@ -38,4 +39,5 @@ Draft everything; the user publishes. A published release is outward-facing and 
 7. **Draft:** `gh release create vX.Y.Z -R <owner/repo> --draft --verify-tag --title "X.Y.Z" --notes-file <file>`.
    Never create a release without `--draft`, and never `gh release edit --draft=false`.
 8. **Report:** the draft's URL, the notes text, and what publishing will fire. After the user says
-   it is published, verify the artifact (e.g. `pip install pkg==X.Y.Z` in a clean venv) and log it.
+   it is published, verify the artifact: install the published artefact in a clean environment the way a user would
+   (for a Python package, `pip install pkg==X.Y.Z` in a clean venv; `pip` applies to Python packages only) and log it.

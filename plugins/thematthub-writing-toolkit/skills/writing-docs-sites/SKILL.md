@@ -27,7 +27,7 @@ true now, so code and numbers come from runs, never from pasting.
 | Area | The bar |
 |---|---|
 | Landing page | pitch line, install line, a ten-line runnable example WITH its output, "why it is different" in three sentences, then "I am a..." cards per reader; one screen before the cards |
-| Learning path | one example grown in steps (salabim's bank model), each step runnable alone; task-phrased titles (pandas "How do I...") |
+| Learning path | one example grown in steps (for example salabim's bank model), each step runnable alone; task-phrased titles (for example pandas "How do I...") |
 | Structure | Diataxis, named plainly: Tutorials / How-to / Reference / Background; one job per page |
 | Reference | generated from the code (numpydoc: Parameters, Returns, Examples, See Also), examples doctested; huge pages split per group |
 | Trust | release notes in the nav, stability/deprecation policy, Citing page (CITATION.cff), validation against known answers, benchmarks with date and hardware |

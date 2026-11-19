@@ -55,15 +55,6 @@
       },
       "description": "Make presentations: brief and structure by kind, design in Claude Slides, finish and edit natively in PowerPoint, build on company templates.",
       "category": "productivity"
-    },
-    {
-      "name": "system1",
-      "source": {
-        "source": "github",
-        "repo": "TheMattHub/Sys1-AI-Gateway"
-      },
-      "description": "Guided setup, diagnosis and provider development for the System-1 gateway: fast decisions for Claude Code from local models.",
-      "category": "development"
     }
   ]
 }

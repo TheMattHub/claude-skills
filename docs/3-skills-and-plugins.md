@@ -1,6 +1,6 @@
 # Skills and plugins
 
-This page is for someone who uses Claude Code and wants to add skills to it. After reading it you can install a plugin from this marketplace, switch it off or update it, judge how many plugins to keep, and write a first skill of your own.
+This page is for someone who uses Claude Code and wants to add skills to it. After reading it you can install a plugin from this marketplace, switch it off or update it, keep only the plugins you use, and write a first skill of your own.
 
 ## What the words mean
 
@@ -49,17 +49,13 @@ claude plugin uninstall thematthub-writing-toolkit@thematthub
 
 Marketplaces from third parties, including this one, do not update automatically by default. To get newer versions, update the plugin as shown above, or open the Marketplaces tab, select `thematthub`, and choose "Update marketplace". The new version loads in your next session, or after `/reload-plugins`. You can turn automatic updates on in the same Marketplaces tab. Removing the marketplace (`claude plugin marketplace remove thematthub`) uninstalls every plugin you installed from it.
 
-## Why not install everything
+## Install the few you will use
 
-Every installed skill's description is sent with every request, whether or not you use the skill. Claude Code gives that list a budget of 1% of the model's context window (how much text it can hold in view at once). When the list is over budget, it drops the descriptions of the least used skills, and Claude can then no longer match your request to them. So more plugins cost context on every turn and can make the ones you want less reliable.
-
-Install the two or three plugins you need, then review after a few weeks:
+Every installed skill's description is sent with every request, whether or not you use the skill. Claude Code gives that list a budget of 1% of the model's context window (how much text it can hold in view at once). Over budget, it drops the descriptions of the least used skills, and Claude can no longer match your request to them. So install the two or three plugins you will use, check what they cost, and remove what you do not use after a few weeks:
 
 - `/skill-doctor` shows what each skill costs, how often it was used, and which were never used.
 - `claude plugin details thematthub-writing-toolkit` (in a shell) shows the always-on token cost (tokens are the units in which Claude counts text) of one plugin and which skill contributes most.
 - The Installed tab in `/plugin` groups plugins you have not used recently under "Not used recently".
-
-Disable or uninstall what you do not use.
 
 ## Write your own first skill
 
