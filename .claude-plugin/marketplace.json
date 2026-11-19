@@ -1,6 +1,6 @@
 {
   "name": "thematthub",
-  "description": "Skills for Claude Code from real project work: writing, document export, publishing repositories, shareable web pages, agent coordination, plant data and LLM integration.",
+  "description": "Skills for Claude Code from real project work: writing, document export, publishing repositories, shareable web pages, presentations, simulation studies, plant data and LLM integration.",
   "owner": {
     "name": "Matteo Brunetti"
   },
@@ -9,11 +9,12 @@
     "repo-publishing": "thematthub-repo-publishing",
     "web-pages": "thematthub-web-pages",
     "docs-export": "thematthub-docs-export",
-    "agent-waves": "thematthub-agent-waves",
+    "agent-waves": null,
     "plant-data": "thematthub-plant-data",
     "llm-integration": "thematthub-llm-integration",
     "decks": "thematthub-decks",
-    "system1": null
+    "system1": null,
+    "thematthub-agent-waves": null
   },
   "plugins": [
     {
@@ -41,12 +42,6 @@
       "category": "productivity"
     },
     {
-      "name": "thematthub-agent-waves",
-      "source": "./plugins/thematthub-agent-waves",
-      "description": "Advanced: coordinate several Claude Code subagents on one repository, with parallel branches, merges and independent review, including long runs while you are away.",
-      "category": "development"
-    },
-    {
       "name": "thematthub-plant-data",
       "source": "./plugins/thematthub-plant-data",
       "description": "Connect apps and simulations to live plant data (OPC UA, MQTT, MES, SQL) without leaking credentials or sending unsafe commands.",
@@ -66,7 +61,10 @@
         "repo": "TheMattHub/decks"
       },
       "description": "Make presentations: brief and structure by kind, design in Claude Slides, finish and edit natively in PowerPoint, build on company templates. The PowerPoint steps need Windows with desktop PowerPoint.",
-      "category": "productivity"
+      "category": "productivity",
+      "metadata": {
+        "icon": "./icons/thematthub-decks.png"
+      }
     },
     {
       "name": "thematthub-naga",
@@ -105,7 +103,10 @@
         "capacity planning",
         "what-if",
         "mcp"
-      ]
+      ],
+      "metadata": {
+        "icon": "./icons/thematthub-naga.png"
+      }
     }
   ]
 }

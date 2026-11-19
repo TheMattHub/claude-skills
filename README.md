@@ -36,17 +36,16 @@ The plugin folders' own READMEs use a one-step form that adds the marketplace an
 
 ## Plugins
 
-| Plugin | What it helps with | Who should install it |
-| --- | --- | --- |
-| `thematthub-writing-toolkit` | Writing texts a reader can follow without you: handbooks, documentation sites, research papers, Italian texts, competitor analyses | Everyone who writes reports, guides or papers |
-| `thematthub-repo-publishing` | Turning a private repository into a safe public release, and cutting versioned releases with draft notes | Anyone who publishes code |
-| `thematthub-web-pages` | Building shareable HTML pages (dashboards, viewers, monitors, reports) and choosing interface colours that are validated instead of eyeballed | Anyone who builds dashboards or viewers |
-| `thematthub-docs-export` | Exporting a project's markdown documentation to Word and PDF, with your own templates and rendered Mermaid diagrams | Anyone who sends documentation to clients or colleagues. Written for Windows |
-| `thematthub-plant-data` | Connecting apps, simulations and digital twins to plant systems (OPC UA, MQTT, MES, historians) safely | Simulation and automation engineers |
-| `thematthub-llm-integration` | Adding language-model calls to an app: provider-agnostic client, validated JSON output, local models, a fake for tests | Developers who build apps that call a model |
-| `thematthub-agent-waves` | Advanced: coordinating several subagents on one repository in waves, with worktrees, briefs, independent checks and unattended runs | Experienced Claude Code users only. Its README lists what to know before running it unattended |
-| `thematthub-decks` | Making presentations: brief and structure, design in Claude Slides, finishing in PowerPoint, company templates | Anyone who builds slide decks. The PowerPoint steps need Windows with desktop PowerPoint |
-| `thematthub-naga` | Running a simulation study for a decision (how many machines, staff or docks; will a change cope with demand) with the Naga engine | Anyone with a capacity or what-if question. Needs Python and the engine: `pip install "nagasim[mcp]"` |
+| | Plugin | What it helps with | Who should install it |
+| --- | --- | --- | --- |
+| <img src="plugins/thematthub-writing-toolkit/.claude-plugin/icon.png" width="40" alt=""> | `thematthub-writing-toolkit` | Writing texts a reader can follow without you: handbooks, documentation sites, research papers, Italian texts, competitor analyses | Everyone who writes reports, guides or papers |
+| <img src="plugins/thematthub-repo-publishing/.claude-plugin/icon.png" width="40" alt=""> | `thematthub-repo-publishing` | Turning a private repository into a safe public release, and cutting versioned releases with draft notes | Anyone who publishes code |
+| <img src="plugins/thematthub-web-pages/.claude-plugin/icon.png" width="40" alt=""> | `thematthub-web-pages` | Building shareable HTML pages (dashboards, viewers, monitors, reports) and choosing interface colours that are validated instead of eyeballed | Anyone who builds dashboards or viewers |
+| <img src="plugins/thematthub-docs-export/.claude-plugin/icon.png" width="40" alt=""> | `thematthub-docs-export` | Exporting a project's markdown documentation to Word and PDF, with your own templates and rendered Mermaid diagrams | Anyone who sends documentation to clients or colleagues. Written for Windows |
+| <img src="plugins/thematthub-plant-data/.claude-plugin/icon.png" width="40" alt=""> | `thematthub-plant-data` | Connecting apps, simulations and digital twins to plant systems (OPC UA, MQTT, MES, historians) safely | Simulation and automation engineers |
+| <img src="plugins/thematthub-llm-integration/.claude-plugin/icon.png" width="40" alt=""> | `thematthub-llm-integration` | Adding language-model calls to an app: provider-agnostic client, validated JSON output, local models, a fake for tests | Developers who build apps that call a model |
+| <img src="icons/thematthub-decks.png" width="40" alt=""> | `thematthub-decks` | Making presentations: brief and structure, design in Claude Slides, finishing in PowerPoint, company templates | Anyone who builds slide decks. The PowerPoint steps need Windows with desktop PowerPoint |
+| <img src="icons/thematthub-naga.png" width="40" alt=""> | `thematthub-naga` | Running a simulation study for a decision (how many machines, staff or docks; will a change cope with demand) with the Naga engine | Anyone with a capacity or what-if question. Needs Python and the engine: `pip install "nagasim[mcp]"` |
 
 The last two live in their own repositories and are only listed here, so installing them fetches from those repositories:
 
@@ -65,7 +64,7 @@ These come from Anthropic's official marketplace, which Claude Code already know
 
 | Plugin | What it gives you | What it costs |
 | --- | --- | --- |
-| `superpowers` | A plan-first way of working: `brainstorming` (clarify a request before building), `writing-plans` (turn it into a step-by-step plan), `systematic-debugging` (find the root cause before fixing), and twelve more skills | About 850 tokens in every session for 15 skills, plus a session-start hook that tells Claude to look for a matching skill before each task. Its `subagent-driven-development` has the same name as the one in `thematthub-agent-waves`: with both installed, disable one |
+| `superpowers` | A plan-first way of working: `brainstorming` (clarify a request before building), `writing-plans` (turn it into a step-by-step plan), `systematic-debugging` (find the root cause before fixing), and twelve more skills | About 850 tokens in every session for 15 skills, plus a session-start hook that tells Claude to look for a matching skill before each task. |
 | `frontend-design` | Design guidance for web interfaces. The `thematthub-web-pages` skills use it when it is installed | One skill |
 
 ```text
@@ -109,4 +108,4 @@ claude plugin validate . --strict
 
 ## Licence and credits
 
-[MIT](LICENSE). The `thematthub-agent-waves` plugin contains a modified skill from the MIT-licensed superpowers plugin by Jesse Vincent; see [plugins/thematthub-agent-waves/NOTICE.md](plugins/thematthub-agent-waves/NOTICE.md).
+[MIT](LICENSE). The two plugins listed from other repositories carry their own licences (`decks`: MIT; `naga`: Apache-2.0).

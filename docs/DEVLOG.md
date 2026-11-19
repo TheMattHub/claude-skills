@@ -10,7 +10,6 @@ Version 0.1.0 of every plugin kept in this repository (`thematthub-docs-export`:
 | thematthub-repo-publishing | open-source-repo-publication, releasing-a-repo |
 | thematthub-web-pages | building-shareable-web-pages, choosing-ui-colours |
 | thematthub-docs-export | exporting-docs |
-| thematthub-agent-waves | coordinating-agent-waves, subagent-driven-development |
 | thematthub-plant-data | connecting-to-plant-data |
 | thematthub-llm-integration | integrating-llms |
 
@@ -35,7 +34,7 @@ IDs are stable; prefix `MK`.
 | --- | --- | --- | --- |
 | MK-1 | 2026-11-19, evals | `analysing-competitors` and `open-source-repo-publication` did not load on question-style requests ("what should I check before...") in 0 of 3 runs | fixed: descriptions now name that kind of request; 3 of 3 |
 | MK-2 | 2026-11-19, review | `subagent-driven-development` told the reader to run its scripts "from this skill's directory", which fails for a plugin install | fixed: scripts are called by absolute path from the repository working tree |
-| MK-3 | 2026-11-19, review | `NOTICE.md` in thematthub-agent-waves listed only part of the files derived from the superpowers plugin | fixed |
+| MK-3 | 2026-11-19, review | `NOTICE.md` in the agent-waves plugin (since moved out) listed only part of the files derived from the superpowers plugin | fixed |
 | MK-4 | 2026-11-19, review | Two credits to a third-party repository had been removed during packaging | fixed: credits restored |
 
 ## Log
@@ -50,3 +49,6 @@ IDs are stable; prefix `MK`.
   refuses wide roots; stopping any process asks first; plant write rule made absolute; model ids
   updated). `decks` listed as `thematthub-decks`; `thematthub-naga` added; `renames` map added
   for the names published in the first release.
+- 2026-11-19: the agent-waves plugin moved out of this repository to a private one; both of its
+  published names map to `null` in `renames`. Icons for the two listings that live in other
+  repositories are kept in `icons/` and shown in the README table.
