@@ -50,8 +50,8 @@ The plugin folders' own READMEs use a one-step form that adds the marketplace an
 
 The last two live in their own repositories and are only listed here, so installing them fetches from those repositories:
 
-- `thematthub-decks` comes from [TheMattHub/decks](https://github.com/TheMattHub/decks). Its skill appears as `decks:making-presentations`, because the plugin keeps its own name inside. Its README says what it needs.
-- `thematthub-naga` takes the `simulation-study` skill from [TheMattHub/naga](https://github.com/TheMattHub/naga) (Apache-2.0) and follows that repository's main branch. While the plugin is enabled, Claude Code starts the engine's tool server on your machine in every session (`naga mcp --tools study --root <your project folder>`). The server reads and writes model and study files only inside that folder, and network access is off. If the `naga` command is not installed, the plugin shows a server error until you install the engine. Keep the engine up to date (`pip install -U "nagasim[mcp]"`) so it matches the skill.
+- `thematthub-decks` comes from [TheMattHub/decks](https://github.com/TheMattHub/decks). Its skill appears as `decks:making-presentations`, because the plugin keeps its own name inside. Its scripts drive the PowerPoint installed on your machine, and `uv` downloads their Python packages on first run; its README lists the requirements.
+- `thematthub-naga` takes the `simulation-study` skill from [TheMattHub/naga](https://github.com/TheMattHub/naga) (Apache-2.0) and follows that repository's main branch. While the plugin is enabled, Claude Code starts the engine's tool server on your machine in every session (`naga mcp --tools study --root <your project folder>`). The server reads and writes model and study files only inside that folder, and network access is off. If the `naga` command is not installed, `/mcp` shows the plugin's server as failed to connect until you install the engine; the skill still loads. Keep the engine up to date (`pip install -U "nagasim[mcp]"`) so it matches the skill.
 
 ## Which ones should I install first?
 

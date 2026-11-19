@@ -6,7 +6,8 @@
 #
 # Safety: a parentless python/node/browser process may belong to something else on the machine
 # (a detached dev server, a notebook kernel). So -Stop is narrow:
-#   - -Stop needs -RepoRoot <path> (repeat it or pass several paths to add worktrees outside it).
+#   - -Stop needs -RepoRoot <path>; to add worktrees outside it, pass several paths separated by
+#     commas (-RepoRoot C:,C:).
 #     Without -RepoRoot, -Stop stops nothing and says so.
 #   - -Stop ends only leftovers whose command line mentions a -RepoRoot path (case-insensitive,
 #     "/" and "\" treated alike, whole folder names only: C:\work\app does not match
@@ -28,7 +29,8 @@ param(
 # Compare paths lower-case with backslashes and no trailing slash.
 function ConvertTo-PathKey([string]$s) { ($s -replace '/', '\').TrimEnd('\').ToLowerInvariant() }
 $roots = @()
-foreach ($r in $RepoRoot) {
+# With powershell.exe -File a comma list arrives as one string, so split it here.
+foreach ($r in ($RepoRoot | ForEach-Object { $_ -split ',' } | ForEach-Object { $_.Trim() })) {
     if (-not $r) { continue }
     if (-not (Test-Path -LiteralPath $r -PathType Container)) { throw "-RepoRoot '$r' is not an existing folder." }
     $full = (Resolve-Path -LiteralPath $r).ProviderPath
