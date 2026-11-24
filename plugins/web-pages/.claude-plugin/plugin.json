@@ -3,7 +3,7 @@
   "displayName": "Web Pages",
   "version": "0.1.0",
   "icon": "./.claude-plugin/icon.png",
-  "description": "Skills for building safe, readable HTML pages (dashboards, viewers, reports) and choosing their colours.",
+  "description": "Skills for building safe, readable HTML pages (dashboards, viewers, reports), choosing their colours, and adding language switching to a web app.",
   "author": {
     "name": "Matteo Brunetti"
   },
@@ -15,7 +15,9 @@
     "csp",
     "accessibility",
     "colour",
-    "dark-mode"
+    "dark-mode",
+    "i18n",
+    "localization"
   ],
   "homepage": "https://github.com/TheMattHub/claude-skills/tree/main/plugins/web-pages",
   "repository": "https://github.com/TheMattHub/claude-skills"

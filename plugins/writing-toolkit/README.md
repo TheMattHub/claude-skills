@@ -1,6 +1,6 @@
 # writing-toolkit
 
-Six skills for writing that a stranger can follow. Claude loads each one when your request matches.
+Seven skills for writing that a stranger can follow. Claude loads each one when your request matches.
 
 | Skill | What it does | Example request |
 |---|---|---|
@@ -10,6 +10,7 @@ Six skills for writing that a stranger can follow. Claude loads each one when yo
 | `writing-research-papers` | Drafts and checks papers: venue, claims traced to evidence, references, submission checklist. | "Is this manuscript ready to submit?" |
 | `writing-italian` | Natural Italian prose, with tables of calques and false friends; cover letters. | "Scrivi una lettera di presentazione." |
 | `analysing-competitors` | Competitor analysis where every claim says how it was verified. | "Run a market scan of tools like ours." |
+| `right-sizing-deliverables` | Matches a report or project to its realistic author, reader and effort instead of maximum completeness, and refuses to fake a human style. | "Make an 80/20 version of this course project." |
 
 ## What it reads, writes and runs
 

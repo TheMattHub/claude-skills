@@ -1,13 +1,14 @@
 # web-pages
 
-Two skills for HTML pages that other people will open.
+Three skills for HTML pages and web apps that other people will open.
 
 - `building-shareable-web-pages`: safe, stable, phone-friendly pages (CSP, escaping, local-server protection, layout shift, light/dark, browser tests). Example: "Build a live monitor page for this simulation and make sure it is safe to share."
 - `choosing-ui-colours`: picks and checks palettes, status colours and dark mode by role and contrast. Example: "Pick status colours and a dark mode for this control panel."
+- `multilingual-ui-rollout`: language switching, a central translation helper and page-by-page localisation coverage for a web app. Example: "Make the admin pages available in Italian and English."
 
 ## Requirements
 
-None. Both skills work on their own.
+None. Each skill works on its own.
 
 ## Optional companions
 

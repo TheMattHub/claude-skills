@@ -3,7 +3,7 @@
   "displayName": "Writing Toolkit",
   "version": "0.1.0",
   "icon": "./.claude-plugin/icon.png",
-  "description": "Six writing skills: self-contained text, course handbooks, docs sites, research papers, Italian prose and competitor analysis.",
+  "description": "Seven writing skills: self-contained text, course handbooks, docs sites, research papers, Italian prose, competitor analysis and right-sizing a deliverable to its reader.",
   "author": {
     "name": "Matteo Brunetti"
   },
@@ -14,7 +14,8 @@
     "handbook",
     "research-paper",
     "italian",
-    "competitor-analysis"
+    "competitor-analysis",
+    "right-sizing"
   ],
   "homepage": "https://github.com/TheMattHub/claude-skills/tree/main/plugins/writing-toolkit",
   "repository": "https://github.com/TheMattHub/claude-skills"

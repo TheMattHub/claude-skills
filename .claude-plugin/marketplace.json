@@ -13,8 +13,7 @@
     "thematthub-llm-integration": "llm-integration",
     "thematthub-decks": "decks",
     "thematthub-naga": "naga",
-    "thematthub-agent-waves": null,
-    "agent-waves": null,
+    "thematthub-agent-waves": "agent-waves",
     "system1": null
   },
   "plugins": [
@@ -52,6 +51,12 @@
       "name": "llm-integration",
       "source": "./plugins/llm-integration",
       "description": "Add language-model calls (Claude, OpenAI, Ollama, LM Studio) to an app, with reliable JSON output and guidance on choosing a local model.",
+      "category": "development"
+    },
+    {
+      "name": "agent-waves",
+      "source": "./plugins/agent-waves",
+      "description": "Coordinate several Claude Code subagents on one repository: parallel branches, merges and independent review, including long runs while you are away.",
       "category": "development"
     },
     {
