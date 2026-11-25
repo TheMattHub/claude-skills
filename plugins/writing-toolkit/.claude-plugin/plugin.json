@@ -2,7 +2,6 @@
   "name": "writing-toolkit",
   "displayName": "Writing Toolkit",
   "version": "0.1.0",
-  "icon": "./.claude-plugin/icon.png",
   "description": "Seven writing skills: self-contained text, course handbooks, docs sites, research papers, Italian prose, competitor analysis and right-sizing a deliverable to its reader.",
   "author": {
     "name": "Matteo Brunetti"

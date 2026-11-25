@@ -2,7 +2,6 @@
   "name": "repo-publishing",
   "displayName": "Repo Publishing",
   "version": "0.1.0",
-  "icon": "./.claude-plugin/icon.png",
   "description": "Publish a private repository safely as open source and release new versions as draft GitHub releases.",
   "author": {
     "name": "Matteo Brunetti"

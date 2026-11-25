@@ -2,7 +2,6 @@
   "name": "plant-data",
   "displayName": "Plant Data",
   "version": "0.1.0",
-  "icon": "./.claude-plugin/icon.png",
   "description": "Connect apps and simulations to live plant data (OPC UA, MQTT, MES, SQL) without leaking credentials or sending unsafe commands.",
   "author": {
     "name": "Matteo Brunetti"

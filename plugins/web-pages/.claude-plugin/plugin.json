@@ -2,7 +2,6 @@
   "name": "web-pages",
   "displayName": "Web Pages",
   "version": "0.1.0",
-  "icon": "./.claude-plugin/icon.png",
   "description": "Skills for building safe, readable HTML pages (dashboards, viewers, reports), choosing their colours, and adding language switching to a web app.",
   "author": {
     "name": "Matteo Brunetti"

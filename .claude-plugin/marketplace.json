@@ -80,6 +80,7 @@
         "url": "https://github.com/TheMattHub/naga.git",
         "path": "nagasim/skills"
       },
+      "strict": false,
       "description": "Run a simulation study for a capacity or what-if decision (how many machines, staff or docks; will a change cope with demand) with the Naga engine. Needs the engine installed: pip install \"nagasim[mcp]\".",
       "category": "productivity",
       "skills": [

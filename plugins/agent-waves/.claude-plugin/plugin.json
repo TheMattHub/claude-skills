@@ -2,7 +2,6 @@
   "name": "agent-waves",
   "displayName": "Agent Waves",
   "version": "0.1.0",
-  "icon": "./.claude-plugin/icon.png",
   "description": "Coordinate several Claude Code subagents on one repository, with parallel branches, merges and independent review, including long runs while you are away.",
   "author": {
     "name": "Matteo Brunetti"
