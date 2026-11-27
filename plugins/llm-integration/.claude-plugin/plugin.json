@@ -1,7 +1,7 @@
 {
   "name": "llm-integration",
   "displayName": "LLM Integration",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Add language-model calls (Claude, OpenAI, Ollama, LM Studio) to an app, with reliable JSON output and guidance on choosing a local model.",
   "author": {
     "name": "Matteo Brunetti"
