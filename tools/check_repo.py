@@ -8,6 +8,7 @@ instead of relying on a reviewer's attention.
 """
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -101,6 +102,34 @@ def check_plugin(plugin_dir):
         err(plugin_dir, "no skills/*/SKILL.md")
     for skill_md in skills:
         check_skill(skill_md)
+    check_version_bump(plugin_dir, manifest, data.get("version"))
+
+
+def git(*args):
+    r = subprocess.run(["git", "-C", str(ROOT), *args], capture_output=True, text=True, encoding="utf-8")
+    return r.stdout if r.returncode == 0 else None
+
+
+def check_version_bump(plugin_dir, manifest, version):
+    # Claude Code updates an installed plugin only when its version changes, so a content change
+    # without a bump never reaches anyone. Compared with the published state (the upstream branch),
+    # not commit by commit, so several unpushed commits can share one bump.
+    base = git("rev-parse", "--verify", "-q", "@{upstream}") or git("rev-parse", "--verify", "-q", "origin/main")
+    if not base:
+        return  # not a clone, or nothing published yet
+    base = base.strip()
+    rel = plugin_dir.relative_to(ROOT).as_posix()
+    published = git("show", f"{base}:{rel}/.claude-plugin/plugin.json")
+    if published is None:
+        return  # new plugin: its first version is the bump
+    if json.loads(published).get("version") != version:
+        return
+    exclude = f":(exclude){rel}/.claude-plugin/plugin.json"
+    changed = (git("diff", "--name-only", base, "--", rel, exclude) or "").split()
+    changed += (git("ls-files", "--others", "--exclude-standard", "--", rel, exclude) or "").split()
+    if changed:
+        err(manifest, f"version {version} is the published one but {len(changed)} file(s) changed "
+                      f"(e.g. {changed[0]}); bump it so installed copies update")
 
 
 def check_marketplace():

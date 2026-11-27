@@ -2,7 +2,7 @@
 
 ## Current status
 
-Version 0.1.0 of every plugin kept in this repository (`docs-export`: 0.2.0).
+Version 0.1.0 of every plugin kept in this repository (`docs-export`: 0.2.0, `llm-integration`: 0.1.1).
 
 | Plugin | Skills |
 | --- | --- |
@@ -20,7 +20,9 @@ server declared in the marketplace entry).
 ## Checks
 
 - `python -I tools/check_repo.py`: structure, description and length limits, dead links,
-  personal or machine-specific content. Run before every push.
+  personal or machine-specific content, and a version bump for every plugin whose files differ
+  from the published branch (installed copies update only when the version changes). Run before
+  every push.
 - `claude plugin validate . --strict`: manifest schema.
 - `claude plugin eval plugins/<name> --ablation none -j 4`: does each skill load on a matching
   request and stay out of an unrelated one. Each case is a billed model run, so run a suite
@@ -55,3 +57,6 @@ IDs are stable; prefix `MK`.
 - 2026-11-19: decided not to submit to Anthropic's directory (it accepts scripts only from Verified
   organisations, and three plugins ship scripts). The `thematthub-` prefix existed only for that
   directory, so the plugins are back to their plain names; `renames` maps the prefixed names to them.
+- 2026-11-27: `integrating-llms` gets the picker benchmark reference (`llm-integration` 0.1.1).
+  The edit reached no installed copy until the bump, so `check_repo.py` now fails when a plugin's
+  files differ from the published branch and its version does not.
