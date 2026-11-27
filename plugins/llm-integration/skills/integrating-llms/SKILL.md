@@ -59,6 +59,7 @@ Copy `references/llm.py` and adapt; it is the tested version from a shipped app.
 
 - Page or document → validated JSON record: `references/structured-extraction.md`.
 - Picking a local model, checking a new one, or running a long tool-use study against Claude Code: `references/local-model-benchmark.md`.
+- Benchmarking small models as pickers (one option out of N), or distilling a teacher into one: `references/picker-benchmark.md`.
 
 ## Common mistakes
 
